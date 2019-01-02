@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-navbar hideBackButton>
+      
+        <ion-title>
+          DisFruta Envíos
+        </ion-title>
+        <p>Cadete: {{current_user.nombre}}</p>
+        <p *ngIf="current_user.estado =='No Disponible'" style="background-color:rgba(252, 71, 71, 0.829);">Estado: {{current_user.estado}}</p>
+        <p *ngIf="current_user.estado =='Disponible'" style="background-color:rgba(64, 216, 25, 0.829);">Estado: {{current_user.estado}}</p>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="fondotodo">
+<div>
+
+
+</div>
+  
+  <ion-menu [content]="content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title centered>Opciones</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-label ion-button block (click)="verTodo()">
+          Ver Más Envíos
+        </ion-label>
+        <ion-label ion-button block (click)="verCadetes()">
+          Ver Cadetes
+        </ion-label>
+        <ion-label ion-button block (click)="salir()">
+          Salir
+        </ion-label>
+    
+
+
+        
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-nav id="nav" #content [root]="rootPage"></ion-nav>
+  <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+  </button>
+  
+
+
+        <ion-grid>
+          <ion-row>
+            <ion-col col>Cliente</ion-col>
+            <ion-col col>Dirección</ion-col>
+            <ion-col col>Estado</ion-col>
+            <ion-col col>Accion</ion-col>
+          </ion-row>
+
+
+              <ion-row  *ngFor="let envio of envioss" class="row" responsive-sm wrap  >
+                 
+                      <ion-col col>{{envio.cliente}}</ion-col>
+                      <ion-col col>{{envio.destino}}</ion-col>
+      
+                      <ion-col style="background-color:rgb(137, 209, 250);" *ngIf="envio.estado == 'En Camino'" col>Cam.</ion-col>
+                      <ion-col style="background-color:rgb(241, 235, 150);" *ngIf="envio.estado == 'Pendiente'" col>Pen.</ion-col>
+                      <ion-col style="background-color:rgb(130, 187, 38);" *ngIf="envio.estado == 'Entregado'" col>Ent.</ion-col>
+                      <ion-col style="background-color:rgba(240, 123, 123, 0.829);" *ngIf="envio.estado == 'Cancelado'" col>Can.</ion-col>
+      
+                      <ion-col col><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>
+                      <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>
+                    
+                </ion-row>
+
+                <ion-row>
+                
+                  <ion-col>
+                    <button ion-button block (click)="nuevoEnvio()">Nuevo Envio</button>
+                    <button ion-button block (click)="verTodo()">Ver Todos Los Envíos</button>
+                    <button ion-button block (click)="verCadetes()">Ver Cadetes</button>
+                    <button ion-button block (click)="salir()">Cerrar Sesión</button>
+                  </ion-col>
+                
+                </ion-row>
+
+          
+
+        </ion-grid>
+
+
+  
+
+</ion-content>

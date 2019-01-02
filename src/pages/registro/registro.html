@@ -1,0 +1,179 @@
+<!--
+  Generated template for the RegistroPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header >
+
+  <ion-navbar class="bg-image">
+    <ion-title >Registrar Cadete 
+  </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bg-image" padding>
+    <ion-grid fixed>
+
+        <ion-row fixed>
+          <ion-col fixed>
+      
+          </ion-col>
+      
+          <ion-col no-padding col-6>
+                <ion-item class="botonescss">
+                  <ion-input  placeholder="Escriba su email" class="inputcss" type="text" [(ngModel)] = "email"></ion-input>
+                </ion-item>
+          </ion-col>
+      
+          <ion-col fixed>
+            
+          </ion-col>
+        </ion-row>
+      
+        <ion-row>
+            <ion-col>
+        
+            </ion-col>
+        
+            <ion-col no-padding col-6>
+                <ion-item>>
+                    <ion-input placeholder="Escriba su contraseña" class="inputcss" type="password" [(ngModel)] = "password"> </ion-input>
+                </ion-item>
+            </ion-col>
+        
+            <ion-col>
+              
+            </ion-col>
+          </ion-row>
+
+
+          <ion-row fixed>
+            <ion-col fixed>
+        
+            </ion-col>
+        
+            <ion-col no-padding col-6>
+                  <ion-item class="botonescss">
+                    <ion-input  placeholder="Repita contraseña" class="inputcss" type="password" [(ngModel)] = "password2"></ion-input>
+                  </ion-item>
+            </ion-col>
+        
+            <ion-col fixed>
+              
+            </ion-col>
+          </ion-row>
+
+
+
+          <ion-row fixed>
+            <ion-col fixed>
+        
+            </ion-col>
+        
+            <ion-col no-padding col-6>
+                  <ion-item class="botonescss">
+                    <ion-input  placeholder="Escriba su nombre" class="inputcss" type="text" [(ngModel)] = "nombre"></ion-input>
+                  </ion-item>
+            </ion-col>
+        
+            <ion-col fixed>
+              
+            </ion-col>
+          </ion-row>
+
+
+
+
+
+
+
+
+          <ion-row fixed>
+            <ion-col fixed>
+        
+            </ion-col>
+        
+            <ion-col no-padding col-6>
+                  <ion-item class="botonescss">
+                    <ion-input  placeholder="Escriba su apellido" class="inputcss" type="text" [(ngModel)] = "apellido"></ion-input>
+                  </ion-item>
+            </ion-col>
+        
+            <ion-col fixed>
+              
+            </ion-col>
+          </ion-row>
+
+
+          <ion-row fixed>
+              <ion-col fixed>
+          
+              </ion-col>
+          
+              <ion-col no-padding col-6>
+                    <ion-item class="botonescss">
+                      <ion-input  placeholder="Escriba su teléfono" class="inputcss" type="text" [(ngModel)] = "telefono"></ion-input>
+                    </ion-item>
+              </ion-col>
+          
+              <ion-col fixed>
+                
+              </ion-col>
+            </ion-row>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+          <!--<ion-row>
+              <ion-col>
+          
+              </ion-col>
+          
+              <ion-col  no-padding col-6>
+                  <ion-item>
+                      <ion-select class="selectcss" placeholder="Seleccione una sucursal">
+                        <ion-option *ngFor="let sucursal of sucursales" value="{{sucursal.id}}">{{sucursal.name}}</ion-option>
+                      </ion-select>
+                    </ion-item>
+              </ion-col>
+          
+              <ion-col>
+                
+              </ion-col>
+            </ion-row>-->
+      
+            <ion-row>
+              <ion-col>
+      
+              </ion-col>
+              <ion-col no-padding col-6>
+                  <ion-item >  
+                      <button padding ion-button block (click)="nuevoCadete()">Registrar</button>
+                    </ion-item> 
+                </ion-col>
+                <ion-col>
+                
+                  </ion-col>
+            </ion-row>
+      
+        
+            
+
+      </ion-grid>
+</ion-content>
+

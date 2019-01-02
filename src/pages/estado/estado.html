@@ -1,0 +1,59 @@
+<!--
+  Generated template for the EstadoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Gestionar Estado</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+<!--<ion-content padding style="background-color:rgb(130, 187, 38);" *ngIf="envioDetalle.estado == 'Entregado'">
+<ion-content padding style="background-color:rgba(240, 123, 123, 0.829);" *ngIf="envioDetalle.estado == 'Cancelado'">
+<ion-content padding style="background-color:rgb(241, 235, 150);" *ngIf="envioDetalle.estado == 'Pendiente'">
+<ion-content padding style="background-color:rgb(137, 209, 250);" *ngIf="envioDetalle.estado == 'En Camino'">-->
+    <ion-grid>
+      <ion-row>
+        <ion-item>
+            <ion-col col><ion-label>Cliente</ion-label></ion-col>
+            <ion-col col><ion-label>{{envioDetalle.cliente}}</ion-label></ion-col>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+            <ion-col col><ion-label>Sucursal</ion-label></ion-col>
+            <ion-col col><ion-label>{{envioDetalle.sucursal}}</ion-label></ion-col>
+      </ion-row>  
+      <ion-row>
+            <ion-col col><ion-label>Dirección</ion-label></ion-col>
+            <ion-col col><ion-label>{{envioDetalle.destino}}</ion-label></ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="envioDetalle.cadete">
+          <ion-col col><ion-label>Cadete Responsable</ion-label></ion-col>
+          <ion-col col><ion-label>{{envioDetalle.cadete}}</ion-label></ion-col>
+    </ion-row>
+
+      <ion-row>
+            <ion-label center style="background-color:rgb(137, 209, 250);" *ngIf="envioDetalle.estado == 'En Camino'">{{envioDetalle.estado}}</ion-label>
+            <ion-label center style="background-color:rgb(241, 235, 150);" *ngIf="envioDetalle.estado == 'Pendiente'">{{envioDetalle.estado}}</ion-label>
+            <ion-label center style="background-color:rgb(130, 187, 38);" *ngIf="envioDetalle.estado == 'Entregado'">{{envioDetalle.estado}}</ion-label>
+            <ion-label center style="background-color:rgba(240, 123, 123, 0.829);" *ngIf="envioDetalle.estado == 'Cancelado'">{{envioDetalle.estado}}</ion-label>
+      </ion-row>
+    </ion-grid>
+
+  <div padding> <!--si no estaba adentro del div no andaba el boton, o tenia un parentesis de mas en "guardarEnvio())>-->
+    <button *ngIf="envioDetalle.estado=='Pendiente'" ion-button block (click)="tomarEnvio()">Tomar</button>
+  </div>
+  <div padding> <!--si no estaba adentro del div no andaba el boton, o tenia un parentesis de mas en "guardarEnvio())>-->
+      <button *ngIf="envioDetalle.cadete==cadete.nombre && envioDetalle.estado!=='Entregado' && envioDetalle.estado!=='Cancelado'" ion-button block (click)="entregarEnvio()">Entregar</button>
+  </div>
+  <div padding> <!--si no estaba adentro del div no andaba el boton, o tenia un parentesis de mas en "guardarEnvio())>-->
+    <button *ngIf="envioDetalle.cadete==cadete.nombre && envioDetalle.estado!=='Entregado' && envioDetalle.estado!=='Cancelado'" ion-button block (click)="cancelarEnvio()" color="danger">Cancelar</button>
+  </div>
+   
+</ion-content>

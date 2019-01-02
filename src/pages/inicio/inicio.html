@@ -1,0 +1,132 @@
+<!--
+  Generated template for the InicioPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+
+</ion-header>
+
+<ion-content padding class="fondotodo">
+
+<div padding class="fondo">
+
+
+
+<ion-grid>
+  <ion-row>
+
+      <ion-col>
+
+        </ion-col>
+
+    <ion-col no-padding col-10 col-lg-6>
+      <ion-item class="logo">
+
+      </ion-item>
+    </ion-col>
+
+    <ion-col>
+
+      </ion-col>
+
+  </ion-row>
+  
+
+  <ion-row>
+    <ion-col>
+
+    </ion-col>
+
+    <ion-col no-padding col-10 col-lg-6>
+          <ion-item class="botonescss">
+            <ion-input  placeholder="Escriba su email" class="inputcss" type="text" [(ngModel)] = "email"></ion-input>
+          </ion-item>
+    </ion-col>
+
+    <ion-col>
+      
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+      <ion-col>
+  
+      </ion-col>
+  
+      <ion-col no-padding col-10 col-lg-6>
+          <ion-item>>
+              <ion-input placeholder="Escriba su contraseña" class="inputcss" type="password" [(ngModel)] = "password"> </ion-input>
+          </ion-item>
+      </ion-col>
+  
+      <ion-col>
+        
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col>
+    
+        </ion-col>
+    
+        <ion-col  no-padding col-10 col-lg-6>
+            <ion-item>
+                <ion-select [(ngModel)]="sucursal_id" class="selectcss" placeholder="Seleccione una sucursal">
+                  <ion-option *ngFor="let sucursal of sucursales" value="{{sucursal.id}}">{{sucursal.name}}</ion-option>
+                </ion-select>
+              </ion-item>
+        </ion-col>
+    
+        <ion-col>
+          
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+
+        </ion-col>
+        <ion-col no-padding col-10 col-lg-6>
+            <ion-item >  
+                <button padding ion-button block (click)="entrar()">Entrar</button>
+              </ion-item> 
+          </ion-col>
+          <ion-col>
+          
+            </ion-col>
+      </ion-row>
+
+      <ion-row>
+          <ion-col>
+  
+          </ion-col>
+          <ion-col no-padding col-10 col-lg-6>
+              <ion-item>    
+                  <i class="botonescss" (click)="registrar()">¿No tenés una cuenta? Registrate</i>
+                </ion-item> 
+            </ion-col>
+            <ion-col>
+            
+              </ion-col>
+        </ion-row>
+      
+
+      
+
+      
+
+     
+
+      
+
+
+</ion-grid>
+
+
+
+    </div>
+
+</ion-content>

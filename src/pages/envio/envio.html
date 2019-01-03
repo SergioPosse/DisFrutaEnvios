@@ -1,12 +1,12 @@
 <ion-header>
   <ion-navbar hideBackButton>
       
-        <ion-title>
+        <ion-title class="centrado">
           DisFruta Envíos
         </ion-title>
-        <p bold>Cadete: {{current_user.nombre}} - {{current_user.coneccion}}</p>
-        <p center *ngIf="current_user.estado =='No Disponible'" style="background-color:rgba(252, 71, 71, 0.829);">Estado: {{current_user.estado}}</p>
-        <p center *ngIf="current_user.estado =='Disponible'" style="background-color:rgba(64, 216, 25, 0.829);">Estado: {{current_user.estado}}</p>
+        <p class="centrado">Cadete: {{current_user.nombre}} - {{current_user.coneccion}}</p>
+        <p class="centrado" *ngIf="current_user.estado =='No Disponible'" style="background-color:rgba(252, 71, 71, 0.829);">Estado: {{current_user.estado}}</p>
+        <p class="centrado" *ngIf="current_user.estado =='Disponible'" style="background-color:rgba(64, 216, 25, 0.829);">Estado: {{current_user.estado}}</p>
   </ion-navbar>
 </ion-header>
 
@@ -19,7 +19,7 @@
   <ion-menu [content]="content">
     <ion-header>
       <ion-toolbar>
-        <ion-title centered>Opciones</ion-title>
+        <ion-title class="centrado">Opciones</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
@@ -49,30 +49,110 @@
 
         <ion-grid>
           <ion-row>
-            <ion-col col>Cliente</ion-col>
-            <ion-col col>Dirección</ion-col>
-            <ion-col col>Estado</ion-col>
-            <ion-col col>Hace</ion-col>
-            <ion-col col>Fecha</ion-col>
-            <ion-col col>Accion</ion-col>
+            <ion-col class="centrado" col-2>Cliente</ion-col>
+            <ion-col class="centrado" col-3>Dirección</ion-col>
+            <ion-col class="centrado" col-2>Estado</ion-col>
+            <ion-col class="centrado" col-1>Hace</ion-col>
+            <ion-col class="centrado" col-2>Fecha</ion-col>
+            <ion-col class="centrado" col-2>Accion</ion-col>
           </ion-row>
 
+          <div *ngFor="let envio of envioss">
 
-              <ion-row  *ngFor="let envio of envioss" class="row" responsive-sm wrap  >
+            <ion-row  style="background-color:rgb(137, 209, 250);" *ngIf="envio.estado == 'En Camino'"class="centrado">
+                  <ion-col class="centrado" col-2>{{envio.cliente}}</ion-col>
+                  <ion-col class="centrado" col-3>{{envio.destino}}</ion-col>
+                  <ion-col class="centrado" col-2 >Cam.</ion-col>
+                  <ion-col class="centrado" col-1>{{envio.hace}}</ion-col>
+                  <ion-col class="centrado" col-2>{{envio.fecha_moment}}</ion-col>
+                  <ion-col class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>
+                  <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>
+            </ion-row>
+
+            <ion-row  style="background-color:rgb(241, 235, 150);" *ngIf="envio.estado == 'Pendiente'" class="centrado">
+              <ion-col class="centrado" col-2>{{envio.cliente}}</ion-col>
+              <ion-col class="centrado" col-3>{{envio.destino}}</ion-col>
+              <ion-col class="centrado" col-2 >Pen.</ion-col>
+              <ion-col class="centrado" col-1>{{envio.hace}}</ion-col>
+              <ion-col class="centrado" col-2>{{envio.fecha_moment}}</ion-col>
+              <ion-col class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>
+              <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>
+        </ion-row>
+
+        <ion-row  style="background-color:rgb(130, 187, 38);" *ngIf="envio.estado == 'Entregado'" class="centrado">
+          <ion-col class="centrado" col-2>{{envio.cliente}}</ion-col>
+          <ion-col class="centrado" col-3>{{envio.destino}}</ion-col>
+          <ion-col class="centrado" col-2 >Ent.</ion-col>
+          <ion-col class="centrado" col-1>{{envio.hace}}</ion-col>
+          <ion-col class="centrado" col-2>{{envio.fecha_moment}}</ion-col>
+          <ion-col class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>
+          <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>
+    </ion-row>
+
+    <ion-row  style="background-color:rgba(240, 123, 123, 0.829);" *ngIf="envio.estado == 'Cancelado'" class="centrado">
+      <ion-col class="centrado" col-2>{{envio.cliente}}</ion-col>
+      <ion-col class="centrado" col-3>{{envio.destino}}</ion-col>
+      <ion-col class="centrado" col-2 >Can.</ion-col>
+      <ion-col class="centrado" col-1>{{envio.hace}}</ion-col>
+      <ion-col class="centrado" col-2>{{envio.fecha_moment}}</ion-col>
+      <ion-col class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>
+      <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>
+</ion-row>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+              
+
+
+
+
+
+                <!-- <ion-row  class="centrado" *ngFor="let envio of envioss" class="row" responsive-sm wrap  >
                  
-                      <ion-col col>{{envio.cliente}}</ion-col>
-                      <ion-col col>{{envio.destino}}</ion-col>
-      
-                      <ion-col style="background-color:rgb(137, 209, 250);" *ngIf="envio.estado == 'En Camino'" col>Cam.</ion-col>
-                      <ion-col style="background-color:rgb(241, 235, 150);" *ngIf="envio.estado == 'Pendiente'" col>Pen.</ion-col>
-                      <ion-col style="background-color:rgb(130, 187, 38);" *ngIf="envio.estado == 'Entregado'" col>Ent.</ion-col>
-                      <ion-col style="background-color:rgba(240, 123, 123, 0.829);" *ngIf="envio.estado == 'Cancelado'" col>Can.</ion-col>
-                      <ion-col col>{{envio.hace}}</ion-col>
-                      <ion-col col>{{envio.fecha_moment}}</ion-col>
-                      <ion-col col><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>
-                      <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>
-                    
-                </ion-row>
+                  <ion-col class="centrado" col-2>{{envio.cliente}}</ion-col>
+                  <ion-col class="centrado" col-3>{{envio.destino}}</ion-col>
+  
+                  <ion-col class="centrado" col-2 style="background-color:rgb(137, 209, 250);" *ngIf="envio.estado == 'En Camino'" col>Cam.</ion-col>
+                  <ion-col class="centrado" col-2 style="background-color:rgb(241, 235, 150);" *ngIf="envio.estado == 'Pendiente'" col>Pen.</ion-col>
+                  <ion-col class="centrado" col-2 style="background-color:rgb(130, 187, 38);" *ngIf="envio.estado == 'Entregado'" col>Ent.</ion-col>
+                  <ion-col class="centrado" col-2 style="background-color:rgba(240, 123, 123, 0.829);" *ngIf="envio.estado == 'Cancelado'" col>Can.</ion-col>
+                  <ion-col class="centrado" col-1>{{envio.hace}}</ion-col>
+                  <ion-col class="centrado" col-2>{{envio.fecha_moment}}</ion-col>
+                  <ion-col class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>
+                  <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>
+                
+            </ion-row> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 <ion-row>
                 

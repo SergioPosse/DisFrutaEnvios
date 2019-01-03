@@ -7,6 +7,7 @@ import {UsuariosService} from '../../services/usuarios.service';
 import {LoginService} from '../../services/login.service';
 import { MenuController } from 'ionic-angular';
 import { EnvioPage} from '../../pages/envio/envio';
+import * as moment from 'moment';
 /**
  * Generated class for the DetallePage page.
  *
@@ -24,7 +25,7 @@ import { EnvioPage} from '../../pages/envio/envio';
 
 export class DetallePage {
   
-  envioDetalle2:any = {id: null, cliente: null, sucursal: null, destino: null, cadete: null, estado: null};
+  envioDetalle2:any = {id: null, cliente: null, sucursal: null, destino: null, cadete: null, estado: null, fecha: null};
   sucursales = [];
   clientes=[];
   cadetes=[];
@@ -80,6 +81,8 @@ export class DetallePage {
     }else{
       alert("crear"); //si es un insert entonces...
       this.envioDetalle2.id= Date.now();
+      this.envioDetalle2.fecha= moment().format();
+      console.log("fecha para crear: "+this.envioDetalle2.fecha);
       this.envioDetalle2.estado="Pendiente";
       this.envioDetalle2.cadete=null; //asigno un id unico con date.now asegurandome que sea unico ya que trabaja con milisegundos
       this.enviosService.createEnvio(this.envioDetalle2); //voy al enviosService
@@ -91,6 +94,7 @@ export class DetallePage {
   }
 
   public eliminarEnvio(){
+    alert("eliminar");
     this.id=null; //tuve que asignarle null al id para usar ngIf en el form, porque me queria cargar el envio
     //que elimine en el form de detalle y no encontraba los datos, me daba todo undefined
     //teoricamente tendria que no cargar el form e ir directo al home con navCtril.pop() pero son

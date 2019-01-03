@@ -1,47 +1,46 @@
 import {Injectable} from '@angular/core';
 import {AngularFireDatabase} from 'angularfire2/database/' //no se porque se duplica el database/database
 
+//importo moment previamente instalado con npm install --save moment
+
+import * as moment from 'moment';
+
 @Injectable()
 export class LoginService{
-
+    
     constructor(public afDB: AngularFireDatabase){} //creo el constructor primero que me trae los datos de firebase con afDB: AngularFireDatabase
 
-    private usuario_id="";
-    private sucursal_id="";
+    sesion:any = {id:null, nombre: null, estado: null, sucursal: null,coneccion: null, fecha: null};
 
 
 public setSession(usuario_id, sucursal_id){
-    this.usuario_id=usuario_id;
-    this.sucursal_id=sucursal_id;
-    
+    this.sesion['id']=usuario_id;
+    this.sesion['sucursal']=sucursal_id;
+    this.sesion['coneccion']="Online";
+
+    this.sesion['fecha'] = moment().format(); //formato con hora
+    this.afDB.list('users/').valueChanges().subscribe(
+        usuarios =>{
+
+            //busco el nombre del usuario
+        for(let j=0; j < usuarios.length; j++){
+            if(usuarios[j]['id']==this.sesion['id']){ //difeencio si es cadete o cliente viendo el nombre como esta escrito si en ingles o español
+              var usuario = usuarios[j];
+            }
+        }    
+        this.sesion['estado'] = usuario['estado'];
+        this.sesion['nombre'] = usuario['nombre'];
+    });
+
 }
 
 public getSession(){
 
-    var sesion:any = {id:null, nombre: null, estado: null, sucursal: null};
-
-
     //lo puse aca ya que es dinamico, cada vez que consulto la sesion puede haber cambiado
     //el estado del cadete (usuario)
-    this.afDB.list('users/').valueChanges().subscribe(
-        usuarios =>{
     
-        for(let j=0; j < usuarios.length; j++){
-            if(usuarios[j]['id']==this.usuario_id){ //difeencio si es cadete o cliente viendo el nombre como esta escrito si en ingles o español
-              var usuario = usuarios[j];
-            }
-        }    
-
-        sesion['estado'] = usuario['estado'];
-        sesion['id'] = usuario['id'];
-        sesion['nombre'] = usuario['nombre'];
-        sesion['sucursal'] = this.sucursal_id;
-
-        
-
-    });
-    return sesion;
     
+   return this.sesion;
     
 }
 
@@ -53,4 +52,6 @@ public getUsuarios(){
     //this.afDB.list('/envios');
     //this.afDB.object<{id,cliente,sucursal,estado}>('envios/'+ envios.id);
 }
+
+
 }

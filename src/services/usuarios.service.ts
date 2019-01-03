@@ -67,7 +67,6 @@ public getUsuario(id){
   public setDisponible(id){
 
     this.afDB.database.ref('users/'+ id).update({ estado: "Disponible"});
-   
   }
 
 

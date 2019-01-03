@@ -5,7 +5,10 @@ import { EnviosService } from '../../services/envios.service';
 import {SucursalesService} from '../../services/sucursales.service';
 import {UsuariosService} from '../../services/usuarios.service';
 import { MenuController } from 'ionic-angular';
+import {DuracionService} from '../../services/duracion.service';
 import {LoginService} from '../../services/login.service';
+import {EnvioPage} from '../envio/envio';
+
 
 @IonicPage()
 @Component({
@@ -26,13 +29,13 @@ export class EstadoPage {
   private id= 0; //creo una variable que sera recipiente para el parametro que paso con verDetalle de home.ts
   //por eso es null al principio hasta que la llene con el parametro
 
-  constructor(public usuariosService : UsuariosService,public loginService : LoginService, menu: MenuController, public sucursalesService: SucursalesService, public navCtrl: NavController, public navParams: NavParams, public enviosService: EnviosService) {
+  constructor(public duracionService: DuracionService, public usuariosService : UsuariosService,public loginService : LoginService, menu: MenuController, public sucursalesService: SucursalesService, public navCtrl: NavController, public navParams: NavParams, public enviosService: EnviosService) {
     menu.enable(true);
     this.id = navParams.get('id');
     this.cadete=this.loginService.getSession();
-    console.log("el id cadete es: "+this.cadete['id']);
-    console.log("el estado cadete es: "+this.cadete['estado']);
-    console.log("el id en estado es: "+this.id); //GUARDO EL PARAMETRO QUE PASE EN verDetalle() de home.ts junto a la ruta de la pagina con navController
+    //console.log("el id cadete es: "+this.cadete['id']);
+    //console.log("el estado cadete es: "+this.cadete['estado']);
+    //console.log("el id en estado es: "+this.id); //GUARDO EL PARAMETRO QUE PASE EN verDetalle() de home.ts junto a la ruta de la pagina con navController
     //this.envio=navParams.get('envio');
 
     this.sucursalesService.getSucursales()
@@ -51,7 +54,7 @@ export class EstadoPage {
           if(detalle[p]['id']==this.id){
           
             this.envioDetalle = detalle[p];
-            console.log(this.envioDetalle);
+            //console.log(this.envioDetalle);
 
             for(let h=0; h < this.clientes.length; h++){
               if(this.clientes[h]['id']==detalle[p]['cliente']){
@@ -113,6 +116,7 @@ export class EstadoPage {
     this.enviosService.setEstado(this.envioDetalle['id'], estado, this.cadete['id']);
     this.usuariosService.setDisponible(this.cadete['id']);
     alert("¡Cancelado!");
+    this.navCtrl.push(EnvioPage);
   }
 
   public entregarEnvio(){
@@ -121,10 +125,12 @@ export class EstadoPage {
     //   alert("¡Ya tomaste un envío!")
      //}
      //else{
+       alert("A entregarlo");
       let estado="Entregado";
       this.enviosService.setEstado(this.envioDetalle['id'], estado, this.cadete['id']);
       this.usuariosService.setDisponible(this.cadete['id']);
       alert("Entregado con exito");
+      this.navCtrl.push(EnvioPage);
      //}
   }
 
@@ -134,9 +140,12 @@ export class EstadoPage {
        alert("¡Ya tomaste un envío!")
      }
      else{
+       alert("Podes tomarlo");
       let estado="En Camino";
-      this.enviosService.setEstado(this.envioDetalle['id'], estado, this.cadete['id']);
       this.usuariosService.setNoDisponible(this.cadete['id']);
+      this.enviosService.setEstado(this.envioDetalle['id'], estado, this.cadete['id']);
+      alert("Tomaste el envio");
+      this.navCtrl.push(EnvioPage);
      }
     // //actualizar estado envio a "en camino"
     // 
@@ -146,7 +155,7 @@ export class EstadoPage {
 
 
     // //this.envioDetalle=null; 555555555555555555555555555555555555
-    // this.navCtrl.push(EnvioPage);
+     
   }
 
 

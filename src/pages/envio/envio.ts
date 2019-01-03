@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import {EnviosService} from '../../services/envios.service'; //agrego el servicio que cree
 import {EstadoPage} from '../estado/estado';
 import {SucursalesService} from '../../services/sucursales.service';
+import {DuracionService} from '../../services/duracion.service';
 import {LoginService} from '../../services/login.service';
 import {DetallePage} from '../detalle/detalle';
 import {HomePage} from '../home/home';
@@ -13,29 +14,50 @@ import { LoadingController } from 'ionic-angular';
 
 import { MenuController } from 'ionic-angular';
 
+//importo moment
+import * as moment from 'moment';
+
+import {Observable} from 'rxjs/Observable';
+import { Storage } from '@ionic/storage';
+
+
+
+
 
 @Component({
   selector: 'page-envio',
   templateUrl: 'envio.html'
 })
 export class EnvioPage {
+ 
 
   envioss = []; //creo un arreglo vacio para llenarlo con el service de abajo en el constructor
 
   sucursales = [];
 
-  current_user=[];
+  current_user:any = {id:null, nombre: null, estado: null, sucursal: null,coneccion: null, fecha: null};
+  
+  
+  duracion_sesion_y_medida=null;
 
   @ViewChild('MyNav') nav: NavController
   
-  constructor(public loginService : LoginService, menu: MenuController, public loadingCtrl: LoadingController, public navCtrl: NavController, public enviosService : EnviosService, public sucursalesService : SucursalesService) {
+  constructor(private storage: Storage, public duracionService: DuracionService, public loginService : LoginService, menu: MenuController, public loadingCtrl: LoadingController, public navCtrl: NavController, public enviosService : EnviosService, public sucursalesService : SucursalesService) {
     
+
     menu.enable(true);
     //this.envios=[];
-   this.current_user= this.loginService.getSession();
-   console.log("prueba: "+this.current_user['nombre']);
-   console.log("sucursal de session: "+this.current_user['sucursal']);
-   console.log("estado de session: "+this.current_user['estado']);
+
+   this.current_user=this.loginService.getSession();
+
+   
+   
+  
+   
+    
+ 
+    
+   
 
     
 
@@ -50,13 +72,14 @@ export class EnvioPage {
     //cargo con el servicio el array de envios
     this.enviosService.getEnvios()
     .subscribe(envios => {
-      console.log(envios);
+      //console.log(envios);
       //this.envios = envios;
 
         for(let j=0; j < envios.length; j++){
               if(envios[j]['sucursal']==this.current_user['sucursal']){
 
               this.envioss.push(envios[j]);
+              
               }
         }
             
@@ -64,6 +87,8 @@ export class EnvioPage {
      this.loginService.getUsuarios().subscribe(usuarios =>{
 
           for(let j=0; j < this.envioss.length; j++){
+
+              this.envioss[j]['fecha_moment'] = moment(this.envioss[j]['fecha']).format("DD MM YYYY");
 
               for(let k=0; k < usuarios.length; k++){
                     if(usuarios[k]['id']==this.envioss[j]['cliente']){
@@ -74,11 +99,17 @@ export class EnvioPage {
           }   
 
 
-     });    
+     }); 
+     
+     
 
      });
 
       
+
+    
+
+     this.startTimer();
 
 
     } //END DEL COSNTRUCTOR
@@ -86,10 +117,27 @@ export class EnvioPage {
 
     //METODOS
 
+    startTimer(){
 
-  backButtonClick(){
-    alert("a inicio");
-  }
+      let miObservador = Observable.create(observer =>{
+
+        setInterval(()=>{
+
+          for(let j=0; j < this.envioss.length; j++){
+
+            this.envioss[j]['hace']=this.duracionService.getDuracion(this.envioss[j]['fecha']);
+            
+          }  
+            
+        }, 2000);
+
+    });
+    miObservador.subscribe((data)=>{
+      //console.log(data);
+    });  
+     
+    }
+
 
 
   public verDetalle(idd){

@@ -4,9 +4,9 @@
         <ion-title>
           DisFruta Envíos
         </ion-title>
-        <p>Cadete: {{current_user.nombre}}</p>
-        <p *ngIf="current_user.estado =='No Disponible'" style="background-color:rgba(252, 71, 71, 0.829);">Estado: {{current_user.estado}}</p>
-        <p *ngIf="current_user.estado =='Disponible'" style="background-color:rgba(64, 216, 25, 0.829);">Estado: {{current_user.estado}}</p>
+        <p bold>Cadete: {{current_user.nombre}} - {{current_user.coneccion}}</p>
+        <p center *ngIf="current_user.estado =='No Disponible'" style="background-color:rgba(252, 71, 71, 0.829);">Estado: {{current_user.estado}}</p>
+        <p center *ngIf="current_user.estado =='Disponible'" style="background-color:rgba(64, 216, 25, 0.829);">Estado: {{current_user.estado}}</p>
   </ion-navbar>
 </ion-header>
 
@@ -52,6 +52,8 @@
             <ion-col col>Cliente</ion-col>
             <ion-col col>Dirección</ion-col>
             <ion-col col>Estado</ion-col>
+            <ion-col col>Tiempo</ion-col>
+            <ion-col col>Fecha</ion-col>
             <ion-col col>Accion</ion-col>
           </ion-row>
 
@@ -65,7 +67,8 @@
                       <ion-col style="background-color:rgb(241, 235, 150);" *ngIf="envio.estado == 'Pendiente'" col>Pen.</ion-col>
                       <ion-col style="background-color:rgb(130, 187, 38);" *ngIf="envio.estado == 'Entregado'" col>Ent.</ion-col>
                       <ion-col style="background-color:rgba(240, 123, 123, 0.829);" *ngIf="envio.estado == 'Cancelado'" col>Can.</ion-col>
-      
+                      <ion-col col>{{envio.hace}}</ion-col>
+                      <ion-col col>{{envio.fecha_moment}}</ion-col>
                       <ion-col col><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>
                       <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>
                     

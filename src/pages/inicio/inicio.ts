@@ -5,6 +5,10 @@ import {RegistroPage} from '../registro/registro';
 import {SucursalesService} from '../../services/sucursales.service';
 import {LoginService} from '../../services/login.service';
 
+import { Storage } from '@ionic/storage';
+import * as moment from 'moment';
+
+
 @Component({
   selector: 'page-inicio',
   templateUrl: 'inicio.html'
@@ -22,7 +26,7 @@ export class InicioPage {
 
   @ViewChild('MyNav') nav: NavController
   
-  constructor(public navCtrl: NavController, public loginService : LoginService, public sucursalesService : SucursalesService, private toastCtrl: ToastController) {
+  constructor(private storage: Storage, public navCtrl: NavController, public loginService : LoginService, public sucursalesService : SucursalesService, private toastCtrl: ToastController) {
     this.sucursalesService.getSucursales()
     .subscribe(sucursal =>{
       this.sucursales=sucursal;  
@@ -75,8 +79,13 @@ entrar(){
 
             }
             else{
-              console.log("usuario: "+usuario['id']);
+              //console.log("usuario: "+usuario['id']);
               this.loginService.setSession(usuario['id'],this.sucursal_id);
+              this.storage.set('sto_id', usuario['id']);
+              this.storage.set('sto_sucursal_id', this.sucursal_id);
+
+              let fecha_inicio = moment().format();
+              this.storage.set('sto_fecha_inicio', fecha_inicio);
               this.navCtrl.push(EnvioPage);
             }
             

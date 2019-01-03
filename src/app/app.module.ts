@@ -23,12 +23,15 @@ import {UsuariosService} from '../services/usuarios.service'
 import {CadetesService} from '../services/cadetes.service'
 import {EnviosService} from '../services/envios.service'
 import {LoginService} from '../services/login.service'
-
+import {DuracionService} from '../services/duracion.service'
 
 //FIREBASE CONFIG
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+
+import { IonicStorageModule } from '@ionic/storage';
+
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCYSut1mEeaD_imtRR9d1sj2jfIyYawi_4",
@@ -44,15 +47,16 @@ export const firebaseConfig = {
     MyApp,
     HomePage,
     InicioPage,
+    EnvioPage,
     DetallePage,
     EstadoPage,
-    EnvioPage,
     RegistroPage,
     CadetePage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule
@@ -63,10 +67,10 @@ export const firebaseConfig = {
     HomePage,
     InicioPage,
     RegistroPage,
+    EnvioPage,
     EstadoPage,
     CadetePage,
-    DetallePage,
-    EnvioPage
+    DetallePage
   ],
   providers: [
     StatusBar,
@@ -77,6 +81,7 @@ export const firebaseConfig = {
     CadetesService,
     EnviosService,
     LoginService,
+    DuracionService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -88,6 +88,7 @@ export class EnvioPage {
 
           for(let j=0; j < this.envioss.length; j++){
 
+              //use otro campo fecha para dejar la original sin formato para calcular el tiempo con moment
               this.envioss[j]['fecha_moment'] = moment(this.envioss[j]['fecha']).format("DD MM YYYY");
 
               for(let k=0; k < usuarios.length; k++){
@@ -125,11 +126,22 @@ export class EnvioPage {
 
           for(let j=0; j < this.envioss.length; j++){
 
+            //le agregue un campo "hace" en la db de forma crota ya que tenia problemas
+            //para usar el localstorage y los servicios para guardar var de sesion
+            //se me reseteaba la fecha que guardaba cuando iniciaba la sesion
+            //mi intencion era guardar la fecha del momento de inicio para tener de referencia
+            //lo mas raro es que con el id del user y otras var de sesion si me funciona todo..
+
+          //hasta probe separando en un servicio dedicado solo a calcular la duracion pero no funciono
+
+          //otro detalle raro es que con la page detalle si me funcionaba perfecto, no me reseteaba la fecha de inicio de sesion
+          //pero con la page estado me resetea la fecha cada vez que ejecuto un metodo del .ts de la page estado
+          //por ejemplo para tomar un envio
             this.envioss[j]['hace']=this.duracionService.getDuracion(this.envioss[j]['fecha']);
             
           }  
             
-        }, 2000);
+        }, 1000);
 
     });
     miObservador.subscribe((data)=>{

@@ -10,8 +10,6 @@ import {HomePage} from '../home/home';
 import {CadetePage} from '../cadete/cadete';
 import {InicioPage} from '../inicio/inicio';
 
-import {App, Platform, Nav} from 'ionic-angular';
-
 import { LoadingController } from 'ionic-angular';
 
 import { MenuController } from 'ionic-angular';
@@ -34,7 +32,7 @@ export class EnvioPage {
 
 
 
-  envioss = []; //creo un arreglo vacio para llenarlo con el service de abajo en el constructor
+  private envioss = []; //creo un arreglo vacio para llenarlo con el service de abajo en el constructor
 
   sucursales = [];
 
@@ -46,7 +44,7 @@ export class EnvioPage {
   @ViewChild('MyNav') nav: NavController
   
   constructor(private storage: Storage, public duracionService: DuracionService, public loginService : LoginService, menu: MenuController, public loadingCtrl: LoadingController, public navCtrl: NavController, public enviosService : EnviosService, public sucursalesService : SucursalesService) {
-
+    this.envioss = [];
    this.current_user=this.loginService.getSession();
 
    
@@ -73,7 +71,11 @@ export class EnvioPage {
     .subscribe(envios => {
       //console.log(envios);
       //this.envios = envios;
-
+        this.envioss=[]; //IMPORTANTE!!! SOLUCIONE LOS DUPLICADOS AL INSERTAR ALGO A LA DB ACA
+        //al parecer subscribe es el encargado de observar cambios en firebase
+        //siempe que hay cambios tengo que reinicializar las variables que use 
+        //la mayor cantidad de problemas fue con el subscribe siempre ya que es asincrono
+        //a la forma de ver estructurada del codigo
         for(let j=0; j < envios.length; j++){
               if(envios[j]['sucursal']==this.current_user['sucursal']){
 

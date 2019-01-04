@@ -10,6 +10,8 @@ import {HomePage} from '../home/home';
 import {CadetePage} from '../cadete/cadete';
 import {InicioPage} from '../inicio/inicio';
 
+import {App, Platform, Nav} from 'ionic-angular';
+
 import { LoadingController } from 'ionic-angular';
 
 import { MenuController } from 'ionic-angular';
@@ -29,7 +31,8 @@ import { Storage } from '@ionic/storage';
   templateUrl: 'envio.html'
 })
 export class EnvioPage {
- 
+
+
 
   envioss = []; //creo un arreglo vacio para llenarlo con el service de abajo en el constructor
 
@@ -43,10 +46,6 @@ export class EnvioPage {
   @ViewChild('MyNav') nav: NavController
   
   constructor(private storage: Storage, public duracionService: DuracionService, public loginService : LoginService, menu: MenuController, public loadingCtrl: LoadingController, public navCtrl: NavController, public enviosService : EnviosService, public sucursalesService : SucursalesService) {
-    
-
-    menu.enable(true);
-    //this.envios=[];
 
    this.current_user=this.loginService.getSession();
 
@@ -114,6 +113,7 @@ export class EnvioPage {
 
 
     } //END DEL COSNTRUCTOR
+
 
 
     //METODOS

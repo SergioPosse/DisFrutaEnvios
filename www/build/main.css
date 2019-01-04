@@ -86940,6 +86940,10 @@ ion-navbar.toolbar {
   text-align: center;
 }
 
+table .redondear, table col {
+  border: 1px solid #111110;
+}
+
 page-home #map {
   height: 300px;
   width: 100%;

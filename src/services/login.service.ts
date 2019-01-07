@@ -32,6 +32,25 @@ public setSession(usuario_id, sucursal_id){
         this.sesion['nombre'] = usuario['nombre'];
     });
 
+
+}
+
+public setIdEnvio(envio_id, cadete_id){
+        //asigno el id para usarlo en la vista y distinguir la fila del envio que el cadete tomo
+        let envio_tomado:any = {envio_id: envio_id, cadete_id: cadete_id};
+        this.afDB.database.ref('envios_tomados/'+envio_id).set(envio_tomado);
+  
+}
+
+public delEnvioTomado(envio_id){
+    this.afDB.database.ref('envios_tomados/'+envio_id).remove();
+}
+
+public getEnviosTomados(){
+
+  return this.afDB.list('envios_tomados/').valueChanges();
+
+
 }
 
 public getSession(){

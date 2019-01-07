@@ -48,7 +48,7 @@ var DuracionService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 164:
+/***/ 163:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -90,7 +90,7 @@ var CadetePage = /** @class */ (function () {
     };
     CadetePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cadete',template:/*ion-inline-start:"D:\Itec\disfrutaenviosIonic3\src\pages\cadete\cadete.html"*/'<!--\n  Generated template for the CadetePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>cadete</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-grid>\n        <ion-row>\n\n          <ion-col col>Nombre</ion-col>\n          <ion-col col>telefono</ion-col>\n          <ion-col col>Estado</ion-col>\n\n        </ion-row>\n\n\n            <ion-row  *ngFor="let cadete of cadetes" class="row" responsive-sm wrap  >\n               \n                    <ion-col col>{{cadete.nombre}}</ion-col>\n                    <ion-col col>{{cadete.telefono}}</ion-col>\n    \n                    <ion-col style="background-color:rgb(25, 199, 40);" *ngIf="cadete.estado == \'Disponible\'" col>Disponible</ion-col>\n                    <ion-col style="background-color:rgb(243, 82, 18);" *ngIf="cadete.estado == \'No Disponible\'" col>No Disponible.</ion-col>\n    \n                  \n              </ion-row>\n\n\n\n        \n\n      </ion-grid>\n</ion-content>\n'/*ion-inline-end:"D:\Itec\disfrutaenviosIonic3\src\pages\cadete\cadete.html"*/,
+            selector: 'page-cadete',template:/*ion-inline-start:"E:\Itec\disfrutaenviosIonic3\src\pages\cadete\cadete.html"*/'<!--\n  Generated template for the CadetePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>cadete</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-grid>\n        <ion-row>\n\n          <ion-col col>Nombre</ion-col>\n          <ion-col col>telefono</ion-col>\n          <ion-col col>Estado</ion-col>\n\n        </ion-row>\n\n\n            <ion-row  *ngFor="let cadete of cadetes" class="row" responsive-sm wrap  >\n               \n                    <ion-col col>{{cadete.nombre}}</ion-col>\n                    <ion-col col>{{cadete.telefono}}</ion-col>\n    \n                    <ion-col style="background-color:rgb(25, 199, 40);" *ngIf="cadete.estado == \'Disponible\'" col>Disponible</ion-col>\n                    <ion-col style="background-color:rgb(243, 82, 18);" *ngIf="cadete.estado == \'No Disponible\'" col>No Disponible.</ion-col>\n    \n                  \n              </ion-row>\n\n\n\n        \n\n      </ion-grid>\n</ion-content>\n'/*ion-inline-end:"E:\Itec\disfrutaenviosIonic3\src\pages\cadete\cadete.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__services_login_service__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_2__services_usuarios_service__["a" /* UsuariosService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], CadetePage);
@@ -101,7 +101,7 @@ var CadetePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 165:
+/***/ 164:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -218,7 +218,7 @@ var DetallePage = /** @class */ (function () {
     };
     DetallePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-detalle',template:/*ion-inline-start:"D:\Itec\disfrutaenviosIonic3\src\pages\detalle\detalle.html"*/'<!--\n  Generated template for the DetallePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Detalles del Envío</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n    <div padding class="fondotodo">\n\n\n\n        <ion-grid>\n          <ion-row>\n        \n              <ion-col>\n        \n                </ion-col>\n        \n            <ion-col no-padding col-10 col-lg-6>\n                <ion-item *ngIf="id != null">\n                    <ion-label>Clientes</ion-label>\n                    <ion-select [(ngModel)] = "envioDetalle2.cliente" >\n                      <ion-option *ngFor="let cliente of clientes" value="{{cliente.id}}">{{cliente.name}}</ion-option>\n                    </ion-select>\n                  </ion-item>\n            </ion-col>\n        \n            <ion-col>\n        \n              </ion-col>\n        \n          </ion-row>\n          \n        \n          <ion-row>\n            <ion-col>\n        \n            </ion-col>\n        \n            <ion-col no-padding col-10 col-lg-6>\n                <ion-item *ngIf="id != null">\n                    <ion-label>Sucursal</ion-label>\n                    <ion-select [(ngModel)] = "envioDetalle2.sucursal" >\n                      <ion-option *ngFor="let sucursal of sucursales" value="{{sucursal.id}}">{{sucursal.name}}</ion-option>\n                    </ion-select>\n                  </ion-item>\n            </ion-col>\n        \n            <ion-col>\n              \n            </ion-col>\n          </ion-row>\n        \n          <ion-row>\n              <ion-col>\n          \n              </ion-col>\n          \n              <ion-col no-padding col-10 col-lg-6>\n                  <ion-item *ngIf="id != null">\n                      <ion-label>Dirección</ion-label>\n                      <ion-input *ngIf="id != null" type="text" [(ngModel)] = "envioDetalle2.destino"> </ion-input>\n                    </ion-item>\n              </ion-col>\n          \n              <ion-col>\n                \n              </ion-col>\n            </ion-row>\n        \n            <ion-row>\n                <ion-col>\n            \n                </ion-col>\n            \n                <ion-col  no-padding col-10 col-lg-6>\n                    <ion-item *ngIf="id != null && id != 0">\n                        <ion-label>Cadetes</ion-label>\n                        <ion-select [(ngModel)] = "envioDetalle2.cadete" >\n                          <ion-option *ngFor="let cadete of cadetes" value="{{cadete.id}}">{{cadete.nombre}}</ion-option>\n                        </ion-select>\n                      </ion-item>\n                </ion-col>\n            \n                <ion-col>\n                  \n                </ion-col>\n              </ion-row>\n        \n              <ion-row>\n                <ion-col>\n        \n                </ion-col>\n                <ion-col no-padding col-10 col-lg-6>\n                    <ion-item *ngIf="id != null && id !=0">\n                        <ion-label>Estado</ion-label>\n                        <ion-select *ngIf="id != null" [(ngModel)] = "envioDetalle2.estado">\n                          <ion-option>Pendiente</ion-option>\n                          <ion-option>En Camino</ion-option>\n                          <ion-option>Entregado</ion-option>\n                          <ion-option>Cancelado</ion-option>\n                        </ion-select>\n                      </ion-item>\n                  </ion-col>\n                  <ion-col>\n                  \n                    </ion-col>\n              </ion-row>\n        \n              <ion-row>\n                  <ion-col>\n          \n                  </ion-col>\n                  <ion-col no-padding col-10 col-lg-6>\n                      <div padding> <!--si no estaba adentro del div no andaba el boton, o tenia un parentesis de mas en "guardarEnvio())>-->\n                        <button ion-button block (click)="guardarEnvio()">Guardar</button>\n                    </div>\n                    <div padding> <!--si no estaba adentro del div no andaba el boton, o tenia un parentesis de mas en "guardarEnvio())>-->\n                      <button *ngIf="id != 0"  ion-button block (click)="eliminarEnvio()" color="danger">Eliminar</button>\n                  </div>\n                    </ion-col>\n                    <ion-col>\n                    \n                      </ion-col>\n                </ion-row>\n              \n    \n        \n        </ion-grid>\n\n\n</div>\n   \n</ion-content>\n'/*ion-inline-end:"D:\Itec\disfrutaenviosIonic3\src\pages\detalle\detalle.html"*/,
+            selector: 'page-detalle',template:/*ion-inline-start:"E:\Itec\disfrutaenviosIonic3\src\pages\detalle\detalle.html"*/'<!--\n  Generated template for the DetallePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Detalles del Envío</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n    <div padding class="fondotodo">\n\n\n\n        <ion-grid>\n          <ion-row>\n        \n              <ion-col>\n        \n                </ion-col>\n        \n            <ion-col no-padding col-10 col-lg-6>\n                <ion-item *ngIf="id != null">\n                    <ion-label>Clientes</ion-label>\n                    <ion-select [(ngModel)] = "envioDetalle2.cliente" >\n                      <ion-option *ngFor="let cliente of clientes" value="{{cliente.id}}">{{cliente.name}}</ion-option>\n                    </ion-select>\n                  </ion-item>\n            </ion-col>\n        \n            <ion-col>\n        \n              </ion-col>\n        \n          </ion-row>\n          \n        \n          <ion-row>\n            <ion-col>\n        \n            </ion-col>\n        \n            <ion-col no-padding col-10 col-lg-6>\n                <ion-item *ngIf="id != null">\n                    <ion-label>Sucursal</ion-label>\n                    <ion-select [(ngModel)] = "envioDetalle2.sucursal" >\n                      <ion-option *ngFor="let sucursal of sucursales" value="{{sucursal.id}}">{{sucursal.name}}</ion-option>\n                    </ion-select>\n                  </ion-item>\n            </ion-col>\n        \n            <ion-col>\n              \n            </ion-col>\n          </ion-row>\n        \n          <ion-row>\n              <ion-col>\n          \n              </ion-col>\n          \n              <ion-col no-padding col-10 col-lg-6>\n                  <ion-item *ngIf="id != null">\n                      <ion-label>Dirección</ion-label>\n                      <ion-input *ngIf="id != null" type="text" [(ngModel)] = "envioDetalle2.destino"> </ion-input>\n                    </ion-item>\n              </ion-col>\n          \n              <ion-col>\n                \n              </ion-col>\n            </ion-row>\n        \n            <ion-row>\n                <ion-col>\n            \n                </ion-col>\n            \n                <ion-col  no-padding col-10 col-lg-6>\n                    <ion-item *ngIf="id != null && id != 0">\n                        <ion-label>Cadetes</ion-label>\n                        <ion-select [(ngModel)] = "envioDetalle2.cadete" >\n                          <ion-option *ngFor="let cadete of cadetes" value="{{cadete.id}}">{{cadete.nombre}}</ion-option>\n                        </ion-select>\n                      </ion-item>\n                </ion-col>\n            \n                <ion-col>\n                  \n                </ion-col>\n              </ion-row>\n        \n              <ion-row>\n                <ion-col>\n        \n                </ion-col>\n                <ion-col no-padding col-10 col-lg-6>\n                    <ion-item *ngIf="id != null && id !=0">\n                        <ion-label>Estado</ion-label>\n                        <ion-select *ngIf="id != null" [(ngModel)] = "envioDetalle2.estado">\n                          <ion-option>Pendiente</ion-option>\n                          <ion-option>En Camino</ion-option>\n                          <ion-option>Entregado</ion-option>\n                          <ion-option>Cancelado</ion-option>\n                        </ion-select>\n                      </ion-item>\n                  </ion-col>\n                  <ion-col>\n                  \n                    </ion-col>\n              </ion-row>\n        \n              <ion-row>\n                  <ion-col>\n          \n                  </ion-col>\n                  <ion-col no-padding col-10 col-lg-6>\n                      <div padding> <!--si no estaba adentro del div no andaba el boton, o tenia un parentesis de mas en "guardarEnvio())>-->\n                        <button ion-button block (click)="guardarEnvio()">Guardar</button>\n                    </div>\n                    <div padding> <!--si no estaba adentro del div no andaba el boton, o tenia un parentesis de mas en "guardarEnvio())>-->\n                      <button *ngIf="id != 0"  ion-button block (click)="eliminarEnvio()" color="danger">Eliminar</button>\n                  </div>\n                    </ion-col>\n                    <ion-col>\n                    \n                      </ion-col>\n                </ion-row>\n              \n    \n        \n        </ion-grid>\n\n\n</div>\n   \n</ion-content>\n'/*ion-inline-end:"E:\Itec\disfrutaenviosIonic3\src\pages\detalle\detalle.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__services_login_service__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_4__services_usuarios_service__["a" /* UsuariosService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */], __WEBPACK_IMPORTED_MODULE_3__services_sucursales_service__["a" /* SucursalesService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__services_envios_service__["a" /* EnviosService */]])
     ], DetallePage);
@@ -229,7 +229,7 @@ var DetallePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 166:
+/***/ 165:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -336,8 +336,9 @@ var EstadoPage = /** @class */ (function () {
         var estado = "Cancelado";
         this.enviosService.setEstado(this.envioDetalle['id'], estado, this.cadete['id']);
         this.usuariosService.setDisponible(this.cadete['id']);
+        this.loginService.delEnvioTomado(this.envioDetalle['id']);
         alert("¡Cancelado!");
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__envio_envio__["a" /* EnvioPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__envio_envio__["a" /* EnvioPage */], { id_tomado: 0 });
     };
     EstadoPage.prototype.entregarEnvio = function () {
         //console.log("estado guardado: "+this.cadete['estado']) //USAR CORCHETES SINO CON . NO ME RECONOCE BIEN
@@ -349,8 +350,9 @@ var EstadoPage = /** @class */ (function () {
         var estado = "Entregado";
         this.enviosService.setEstado(this.envioDetalle['id'], estado, this.cadete['id']);
         this.usuariosService.setDisponible(this.cadete['id']);
+        this.loginService.delEnvioTomado(this.envioDetalle['id']);
         alert("Entregado con exito");
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__envio_envio__["a" /* EnvioPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__envio_envio__["a" /* EnvioPage */], { id_tomado: 0 });
         //}
     };
     EstadoPage.prototype.tomarEnvio = function () {
@@ -363,8 +365,11 @@ var EstadoPage = /** @class */ (function () {
             var estado = "En Camino";
             this.usuariosService.setNoDisponible(this.cadete['id']);
             this.enviosService.setEstado(this.envioDetalle['id'], estado, this.cadete['id']);
+            this.loginService.setIdEnvio(this.envioDetalle['id'], this.cadete['id']);
+            console.log("seteado: " + this.envioDetalle['id']);
             alert("Tomaste el envio");
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__envio_envio__["a" /* EnvioPage */]);
+            //this.navCtrl.push(EnvioPage, {id_tomado: this.envioDetalle['id']});
+            this.navCtrl.pop();
         }
         // //actualizar estado envio a "en camino"
         // 
@@ -375,7 +380,7 @@ var EstadoPage = /** @class */ (function () {
     };
     EstadoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-estado',template:/*ion-inline-start:"D:\Itec\disfrutaenviosIonic3\src\pages\estado\estado.html"*/'<!--\n  Generated template for the EstadoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Gestionar Estado</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n<!--<ion-content padding style="background-color:rgb(130, 187, 38);" *ngIf="envioDetalle.estado == \'Entregado\'">\n<ion-content padding style="background-color:rgba(240, 123, 123, 0.829);" *ngIf="envioDetalle.estado == \'Cancelado\'">\n<ion-content padding style="background-color:rgb(241, 235, 150);" *ngIf="envioDetalle.estado == \'Pendiente\'">\n<ion-content padding style="background-color:rgb(137, 209, 250);" *ngIf="envioDetalle.estado == \'En Camino\'">-->\n    <ion-grid>\n      <ion-row>\n        <ion-item>\n            <ion-col col><ion-label>Cliente</ion-label></ion-col>\n            <ion-col col><ion-label>{{envioDetalle.cliente}}</ion-label></ion-col>\n        </ion-item>\n      </ion-row>\n      <ion-row>\n            <ion-col col><ion-label>Sucursal</ion-label></ion-col>\n            <ion-col col><ion-label>{{envioDetalle.sucursal}}</ion-label></ion-col>\n      </ion-row>  \n      <ion-row>\n            <ion-col col><ion-label>Dirección</ion-label></ion-col>\n            <ion-col col><ion-label>{{envioDetalle.destino}}</ion-label></ion-col>\n      </ion-row>\n\n      <ion-row *ngIf="envioDetalle.cadete">\n          <ion-col col><ion-label>Cadete Responsable</ion-label></ion-col>\n          <ion-col col><ion-label>{{envioDetalle.cadete}}</ion-label></ion-col>\n    </ion-row>\n\n      <ion-row>\n            <ion-label center style="background-color:rgb(137, 209, 250);" *ngIf="envioDetalle.estado == \'En Camino\'">{{envioDetalle.estado}}</ion-label>\n            <ion-label center style="background-color:rgb(241, 235, 150);" *ngIf="envioDetalle.estado == \'Pendiente\'">{{envioDetalle.estado}}</ion-label>\n            <ion-label center style="background-color:rgb(130, 187, 38);" *ngIf="envioDetalle.estado == \'Entregado\'">{{envioDetalle.estado}}</ion-label>\n            <ion-label center style="background-color:rgba(240, 123, 123, 0.829);" *ngIf="envioDetalle.estado == \'Cancelado\'">{{envioDetalle.estado}}</ion-label>\n      </ion-row>\n    </ion-grid>\n\n  <div padding> <!--si no estaba adentro del div no andaba el boton, o tenia un parentesis de mas en "guardarEnvio())>-->\n    <button *ngIf="envioDetalle.estado==\'Pendiente\'" ion-button block (click)="tomarEnvio()">Tomar</button>\n  </div>\n  <div padding> <!--si no estaba adentro del div no andaba el boton, o tenia un parentesis de mas en "guardarEnvio())>-->\n      <button *ngIf="envioDetalle.cadete==cadete.nombre && envioDetalle.estado!==\'Entregado\' && envioDetalle.estado!==\'Cancelado\'" ion-button block (click)="entregarEnvio()">Entregar</button>\n  </div>\n  <div padding> <!--si no estaba adentro del div no andaba el boton, o tenia un parentesis de mas en "guardarEnvio())>-->\n    <button *ngIf="envioDetalle.cadete==cadete.nombre && envioDetalle.estado!==\'Entregado\' && envioDetalle.estado!==\'Cancelado\'" ion-button block (click)="cancelarEnvio()" color="danger">Cancelar</button>\n  </div>\n   \n</ion-content>'/*ion-inline-end:"D:\Itec\disfrutaenviosIonic3\src\pages\estado\estado.html"*/,
+            selector: 'page-estado',template:/*ion-inline-start:"E:\Itec\disfrutaenviosIonic3\src\pages\estado\estado.html"*/'<!--\n  Generated template for the EstadoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Gestionar Estado</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n<!--<ion-content padding style="background-color:rgb(130, 187, 38);" *ngIf="envioDetalle.estado == \'Entregado\'">\n<ion-content padding style="background-color:rgba(240, 123, 123, 0.829);" *ngIf="envioDetalle.estado == \'Cancelado\'">\n<ion-content padding style="background-color:rgb(241, 235, 150);" *ngIf="envioDetalle.estado == \'Pendiente\'">\n<ion-content padding style="background-color:rgb(137, 209, 250);" *ngIf="envioDetalle.estado == \'En Camino\'">-->\n    <ion-grid>\n      <ion-row>\n        <ion-item>\n            <ion-col col><ion-label>Cliente</ion-label></ion-col>\n            <ion-col col><ion-label>{{envioDetalle.cliente}}</ion-label></ion-col>\n        </ion-item>\n      </ion-row>\n      <ion-row>\n            <ion-col col><ion-label>Sucursal</ion-label></ion-col>\n            <ion-col col><ion-label>{{envioDetalle.sucursal}}</ion-label></ion-col>\n      </ion-row>  \n      <ion-row>\n            <ion-col col><ion-label>Dirección</ion-label></ion-col>\n            <ion-col col><ion-label>{{envioDetalle.destino}}</ion-label></ion-col>\n      </ion-row>\n\n      <ion-row *ngIf="envioDetalle.cadete">\n          <ion-col col><ion-label>Cadete Responsable</ion-label></ion-col>\n          <ion-col col><ion-label>{{envioDetalle.cadete}}</ion-label></ion-col>\n    </ion-row>\n\n      <ion-row>\n            <ion-label center style="background-color:rgb(137, 209, 250);" *ngIf="envioDetalle.estado == \'En Camino\'">{{envioDetalle.estado}}</ion-label>\n            <ion-label center style="background-color:rgb(241, 235, 150);" *ngIf="envioDetalle.estado == \'Pendiente\'">{{envioDetalle.estado}}</ion-label>\n            <ion-label center style="background-color:rgb(130, 187, 38);" *ngIf="envioDetalle.estado == \'Entregado\'">{{envioDetalle.estado}}</ion-label>\n            <ion-label center style="background-color:rgba(240, 123, 123, 0.829);" *ngIf="envioDetalle.estado == \'Cancelado\'">{{envioDetalle.estado}}</ion-label>\n      </ion-row>\n    </ion-grid>\n\n  <div padding> <!--si no estaba adentro del div no andaba el boton, o tenia un parentesis de mas en "guardarEnvio())>-->\n    <button *ngIf="envioDetalle.estado==\'Pendiente\'" ion-button block (click)="tomarEnvio()">Tomar</button>\n  </div>\n  <div padding> <!--si no estaba adentro del div no andaba el boton, o tenia un parentesis de mas en "guardarEnvio())>-->\n      <button *ngIf="envioDetalle.cadete==cadete.nombre && envioDetalle.estado!==\'Entregado\' && envioDetalle.estado!==\'Cancelado\'" ion-button block (click)="entregarEnvio()">Entregar</button>\n  </div>\n  <div padding> <!--si no estaba adentro del div no andaba el boton, o tenia un parentesis de mas en "guardarEnvio())>-->\n    <button *ngIf="envioDetalle.cadete==cadete.nombre && envioDetalle.estado!==\'Entregado\' && envioDetalle.estado!==\'Cancelado\'" ion-button block (click)="cancelarEnvio()" color="danger">Cancelar</button>\n  </div>\n   \n</ion-content>'/*ion-inline-end:"E:\Itec\disfrutaenviosIonic3\src\pages\estado\estado.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__services_duracion_service__["a" /* DuracionService */], __WEBPACK_IMPORTED_MODULE_4__services_usuarios_service__["a" /* UsuariosService */], __WEBPACK_IMPORTED_MODULE_6__services_login_service__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */], __WEBPACK_IMPORTED_MODULE_3__services_sucursales_service__["a" /* SucursalesService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__services_envios_service__["a" /* EnviosService */]])
     ], EstadoPage);
@@ -386,12 +391,12 @@ var EstadoPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 167:
+/***/ 166:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegistroPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_cadetes_service__ = __webpack_require__(382);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_cadetes_service__ = __webpack_require__(381);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_login_service__ = __webpack_require__(46);
@@ -492,7 +497,7 @@ var RegistroPage = /** @class */ (function () {
     }; //en nuevo cadete
     RegistroPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-registro',template:/*ion-inline-start:"D:\Itec\disfrutaenviosIonic3\src\pages\registro\registro.html"*/'<!--\n  Generated template for the RegistroPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n\n  <ion-navbar class="bg-image">\n    <ion-title >Registrar Cadete \n  </ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="bg-image" padding>\n    <ion-grid fixed>\n\n        <ion-row fixed>\n          <ion-col fixed>\n      \n          </ion-col>\n      \n          <ion-col no-padding col-6>\n                <ion-item class="botonescss">\n                  <ion-input  placeholder="Escriba su email" class="inputcss" type="text" [(ngModel)] = "email"></ion-input>\n                </ion-item>\n          </ion-col>\n      \n          <ion-col fixed>\n            \n          </ion-col>\n        </ion-row>\n      \n        <ion-row>\n            <ion-col>\n        \n            </ion-col>\n        \n            <ion-col no-padding col-6>\n                <ion-item>>\n                    <ion-input placeholder="Escriba su contraseña" class="inputcss" type="password" [(ngModel)] = "password"> </ion-input>\n                </ion-item>\n            </ion-col>\n        \n            <ion-col>\n              \n            </ion-col>\n          </ion-row>\n\n\n          <ion-row fixed>\n            <ion-col fixed>\n        \n            </ion-col>\n        \n            <ion-col no-padding col-6>\n                  <ion-item class="botonescss">\n                    <ion-input  placeholder="Repita contraseña" class="inputcss" type="password" [(ngModel)] = "password2"></ion-input>\n                  </ion-item>\n            </ion-col>\n        \n            <ion-col fixed>\n              \n            </ion-col>\n          </ion-row>\n\n\n\n          <ion-row fixed>\n            <ion-col fixed>\n        \n            </ion-col>\n        \n            <ion-col no-padding col-6>\n                  <ion-item class="botonescss">\n                    <ion-input  placeholder="Escriba su nombre" class="inputcss" type="text" [(ngModel)] = "nombre"></ion-input>\n                  </ion-item>\n            </ion-col>\n        \n            <ion-col fixed>\n              \n            </ion-col>\n          </ion-row>\n\n\n\n\n\n\n\n\n          <ion-row fixed>\n            <ion-col fixed>\n        \n            </ion-col>\n        \n            <ion-col no-padding col-6>\n                  <ion-item class="botonescss">\n                    <ion-input  placeholder="Escriba su apellido" class="inputcss" type="text" [(ngModel)] = "apellido"></ion-input>\n                  </ion-item>\n            </ion-col>\n        \n            <ion-col fixed>\n              \n            </ion-col>\n          </ion-row>\n\n\n          <ion-row fixed>\n              <ion-col fixed>\n          \n              </ion-col>\n          \n              <ion-col no-padding col-6>\n                    <ion-item class="botonescss">\n                      <ion-input  placeholder="Escriba su teléfono" class="inputcss" type="text" [(ngModel)] = "telefono"></ion-input>\n                    </ion-item>\n              </ion-col>\n          \n              <ion-col fixed>\n                \n              </ion-col>\n            </ion-row>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n      \n          <!--<ion-row>\n              <ion-col>\n          \n              </ion-col>\n          \n              <ion-col  no-padding col-6>\n                  <ion-item>\n                      <ion-select class="selectcss" placeholder="Seleccione una sucursal">\n                        <ion-option *ngFor="let sucursal of sucursales" value="{{sucursal.id}}">{{sucursal.name}}</ion-option>\n                      </ion-select>\n                    </ion-item>\n              </ion-col>\n          \n              <ion-col>\n                \n              </ion-col>\n            </ion-row>-->\n      \n            <ion-row>\n              <ion-col>\n      \n              </ion-col>\n              <ion-col no-padding col-6>\n                  <ion-item >  \n                      <button padding ion-button block (click)="nuevoCadete()">Registrar</button>\n                    </ion-item> \n                </ion-col>\n                <ion-col>\n                \n                  </ion-col>\n            </ion-row>\n      \n        \n            \n\n      </ion-grid>\n</ion-content>\n\n'/*ion-inline-end:"D:\Itec\disfrutaenviosIonic3\src\pages\registro\registro.html"*/,
+            selector: 'page-registro',template:/*ion-inline-start:"E:\Itec\disfrutaenviosIonic3\src\pages\registro\registro.html"*/'<!--\n  Generated template for the RegistroPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n\n  <ion-navbar class="bg-image">\n    <ion-title >Registrar Cadete \n  </ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="bg-image" padding>\n    <ion-grid fixed>\n\n        <ion-row fixed>\n          <ion-col fixed>\n      \n          </ion-col>\n      \n          <ion-col no-padding col-6>\n                <ion-item class="botonescss">\n                  <ion-input  placeholder="Escriba su email" class="inputcss" type="text" [(ngModel)] = "email"></ion-input>\n                </ion-item>\n          </ion-col>\n      \n          <ion-col fixed>\n            \n          </ion-col>\n        </ion-row>\n      \n        <ion-row>\n            <ion-col>\n        \n            </ion-col>\n        \n            <ion-col no-padding col-6>\n                <ion-item>>\n                    <ion-input placeholder="Escriba su contraseña" class="inputcss" type="password" [(ngModel)] = "password"> </ion-input>\n                </ion-item>\n            </ion-col>\n        \n            <ion-col>\n              \n            </ion-col>\n          </ion-row>\n\n\n          <ion-row fixed>\n            <ion-col fixed>\n        \n            </ion-col>\n        \n            <ion-col no-padding col-6>\n                  <ion-item class="botonescss">\n                    <ion-input  placeholder="Repita contraseña" class="inputcss" type="password" [(ngModel)] = "password2"></ion-input>\n                  </ion-item>\n            </ion-col>\n        \n            <ion-col fixed>\n              \n            </ion-col>\n          </ion-row>\n\n\n\n          <ion-row fixed>\n            <ion-col fixed>\n        \n            </ion-col>\n        \n            <ion-col no-padding col-6>\n                  <ion-item class="botonescss">\n                    <ion-input  placeholder="Escriba su nombre" class="inputcss" type="text" [(ngModel)] = "nombre"></ion-input>\n                  </ion-item>\n            </ion-col>\n        \n            <ion-col fixed>\n              \n            </ion-col>\n          </ion-row>\n\n\n\n\n\n\n\n\n          <ion-row fixed>\n            <ion-col fixed>\n        \n            </ion-col>\n        \n            <ion-col no-padding col-6>\n                  <ion-item class="botonescss">\n                    <ion-input  placeholder="Escriba su apellido" class="inputcss" type="text" [(ngModel)] = "apellido"></ion-input>\n                  </ion-item>\n            </ion-col>\n        \n            <ion-col fixed>\n              \n            </ion-col>\n          </ion-row>\n\n\n          <ion-row fixed>\n              <ion-col fixed>\n          \n              </ion-col>\n          \n              <ion-col no-padding col-6>\n                    <ion-item class="botonescss">\n                      <ion-input  placeholder="Escriba su teléfono" class="inputcss" type="text" [(ngModel)] = "telefono"></ion-input>\n                    </ion-item>\n              </ion-col>\n          \n              <ion-col fixed>\n                \n              </ion-col>\n            </ion-row>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n      \n          <!--<ion-row>\n              <ion-col>\n          \n              </ion-col>\n          \n              <ion-col  no-padding col-6>\n                  <ion-item>\n                      <ion-select class="selectcss" placeholder="Seleccione una sucursal">\n                        <ion-option *ngFor="let sucursal of sucursales" value="{{sucursal.id}}">{{sucursal.name}}</ion-option>\n                      </ion-select>\n                    </ion-item>\n              </ion-col>\n          \n              <ion-col>\n                \n              </ion-col>\n            </ion-row>-->\n      \n            <ion-row>\n              <ion-col>\n      \n              </ion-col>\n              <ion-col no-padding col-6>\n                  <ion-item >  \n                      <button padding ion-button block (click)="nuevoCadete()">Registrar</button>\n                    </ion-item> \n                </ion-col>\n                <ion-col>\n                \n                  </ion-col>\n            </ion-row>\n      \n        \n            \n\n      </ion-grid>\n</ion-content>\n\n'/*ion-inline-end:"E:\Itec\disfrutaenviosIonic3\src\pages\registro\registro.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__services_login_service__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* ToastController */], __WEBPACK_IMPORTED_MODULE_0__services_cadetes_service__["a" /* CadetesService */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavParams */]])
     ], RegistroPage);
@@ -503,7 +508,7 @@ var RegistroPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 206:
+/***/ 205:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -516,11 +521,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 206;
+webpackEmptyAsyncContext.id = 205;
 
 /***/ }),
 
-/***/ 247:
+/***/ 246:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -533,11 +538,11 @@ var map = {
 		2
 	],
 	"../pages/estado/estado.module": [
-		639,
+		640,
 		1
 	],
 	"../pages/registro/registro.module": [
-		640,
+		639,
 		0
 	]
 };
@@ -552,12 +557,12 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 247;
+webpackAsyncContext.id = 246;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 381:
+/***/ 380:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -602,7 +607,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"D:\Itec\disfrutaenviosIonic3\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Ionic Blank\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n<ion-list>\n  <ion-item>\n      <ion-label floating>Origen</ion-label>\n      <ion-input type="text" [(ngModel)]="origen"></ion-input>\n  </ion-item>\n  <ion-item>\n      <ion-label floating>Destino</ion-label>\n      <ion-input type="text" [(ngModel)]="destino"></ion-input>\n  </ion-item>\n  <button ion-button full (click)="calculateAndDisplayRoute()">Get Direction</button>\n</ion-list>\n  {{origen}} - {{destino}}\n\n  <div id="map">\n\n  </div>\n  \n</ion-content>\n'/*ion-inline-end:"D:\Itec\disfrutaenviosIonic3\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"E:\Itec\disfrutaenviosIonic3\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Ionic Blank\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n<ion-list>\n  <ion-item>\n      <ion-label floating>Origen</ion-label>\n      <ion-input type="text" [(ngModel)]="origen"></ion-input>\n  </ion-item>\n  <ion-item>\n      <ion-label floating>Destino</ion-label>\n      <ion-input type="text" [(ngModel)]="destino"></ion-input>\n  </ion-item>\n  <button ion-button full (click)="calculateAndDisplayRoute()">Get Direction</button>\n</ion-list>\n  {{origen}} - {{destino}}\n\n  <div id="map">\n\n  </div>\n  \n</ion-content>\n'/*ion-inline-end:"E:\Itec\disfrutaenviosIonic3\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
     ], HomePage);
@@ -613,7 +618,7 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 382:
+/***/ 381:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -717,6 +722,17 @@ var LoginService = /** @class */ (function () {
             _this.sesion['nombre'] = usuario['nombre'];
         });
     };
+    LoginService.prototype.setIdEnvio = function (envio_id, cadete_id) {
+        //asigno el id para usarlo en la vista y distinguir la fila del envio que el cadete tomo
+        var envio_tomado = { envio_id: envio_id, cadete_id: cadete_id };
+        this.afDB.database.ref('envios_tomados/' + envio_id).set(envio_tomado);
+    };
+    LoginService.prototype.delEnvioTomado = function (envio_id) {
+        this.afDB.database.ref('envios_tomados/' + envio_id).remove();
+    };
+    LoginService.prototype.getEnviosTomados = function () {
+        return this.afDB.list('envios_tomados/').valueChanges();
+    };
     LoginService.prototype.getSession = function () {
         //lo puse aca ya que es dinamico, cada vez que consulto la sesion puede haber cambiado
         //el estado del cadete (usuario)
@@ -753,23 +769,23 @@ var LoginService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(423);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(426);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(631);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(381);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(380);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_inicio_inicio__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_detalle_detalle__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_detalle_detalle__ = __webpack_require__(164);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_envio_envio__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_estado_estado__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_cadete_cadete__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_registro_registro__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_estado_estado__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_cadete_cadete__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_registro_registro__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_sucursales_service__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_usuarios_service__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_cadetes_service__ = __webpack_require__(382);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_cadetes_service__ = __webpack_require__(381);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_envios_service__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_login_service__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_duracion_service__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_fire__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_fire_database__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_fire_database__ = __webpack_require__(247);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__angular_fire_auth__ = __webpack_require__(632);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_storage__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_storage__ = __webpack_require__(382);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -833,8 +849,8 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/cadete/cadete.module#CadetePageModule', name: 'CadetePage', segment: 'cadete', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/detalle/detalle.module#DetallePageModule', name: 'DetallePage', segment: 'detalle', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/estado/estado.module#EstadoPageModule', name: 'EstadoPage', segment: 'estado', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/registro/registro.module#RegistroPageModule', name: 'RegistroPage', segment: 'registro', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/registro/registro.module#RegistroPageModule', name: 'RegistroPage', segment: 'registro', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/estado/estado.module#EstadoPageModule', name: 'EstadoPage', segment: 'estado', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_22__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
@@ -878,254 +894,254 @@ var AppModule = /** @class */ (function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 257,
-	"./af.js": 257,
-	"./ar": 258,
-	"./ar-dz": 259,
-	"./ar-dz.js": 259,
-	"./ar-kw": 260,
-	"./ar-kw.js": 260,
-	"./ar-ly": 261,
-	"./ar-ly.js": 261,
-	"./ar-ma": 262,
-	"./ar-ma.js": 262,
-	"./ar-sa": 263,
-	"./ar-sa.js": 263,
-	"./ar-tn": 264,
-	"./ar-tn.js": 264,
-	"./ar.js": 258,
-	"./az": 265,
-	"./az.js": 265,
-	"./be": 266,
-	"./be.js": 266,
-	"./bg": 267,
-	"./bg.js": 267,
-	"./bm": 268,
-	"./bm.js": 268,
-	"./bn": 269,
-	"./bn.js": 269,
-	"./bo": 270,
-	"./bo.js": 270,
-	"./br": 271,
-	"./br.js": 271,
-	"./bs": 272,
-	"./bs.js": 272,
-	"./ca": 273,
-	"./ca.js": 273,
-	"./cs": 274,
-	"./cs.js": 274,
-	"./cv": 275,
-	"./cv.js": 275,
-	"./cy": 276,
-	"./cy.js": 276,
-	"./da": 277,
-	"./da.js": 277,
-	"./de": 278,
-	"./de-at": 279,
-	"./de-at.js": 279,
-	"./de-ch": 280,
-	"./de-ch.js": 280,
-	"./de.js": 278,
-	"./dv": 281,
-	"./dv.js": 281,
-	"./el": 282,
-	"./el.js": 282,
-	"./en-au": 283,
-	"./en-au.js": 283,
-	"./en-ca": 284,
-	"./en-ca.js": 284,
-	"./en-gb": 285,
-	"./en-gb.js": 285,
-	"./en-ie": 286,
-	"./en-ie.js": 286,
-	"./en-il": 287,
-	"./en-il.js": 287,
-	"./en-nz": 288,
-	"./en-nz.js": 288,
-	"./eo": 289,
-	"./eo.js": 289,
-	"./es": 290,
-	"./es-do": 291,
-	"./es-do.js": 291,
-	"./es-us": 292,
-	"./es-us.js": 292,
-	"./es.js": 290,
-	"./et": 293,
-	"./et.js": 293,
-	"./eu": 294,
-	"./eu.js": 294,
-	"./fa": 295,
-	"./fa.js": 295,
-	"./fi": 296,
-	"./fi.js": 296,
-	"./fo": 297,
-	"./fo.js": 297,
-	"./fr": 298,
-	"./fr-ca": 299,
-	"./fr-ca.js": 299,
-	"./fr-ch": 300,
-	"./fr-ch.js": 300,
-	"./fr.js": 298,
-	"./fy": 301,
-	"./fy.js": 301,
-	"./gd": 302,
-	"./gd.js": 302,
-	"./gl": 303,
-	"./gl.js": 303,
-	"./gom-latn": 304,
-	"./gom-latn.js": 304,
-	"./gu": 305,
-	"./gu.js": 305,
-	"./he": 306,
-	"./he.js": 306,
-	"./hi": 307,
-	"./hi.js": 307,
-	"./hr": 308,
-	"./hr.js": 308,
-	"./hu": 309,
-	"./hu.js": 309,
-	"./hy-am": 310,
-	"./hy-am.js": 310,
-	"./id": 311,
-	"./id.js": 311,
-	"./is": 312,
-	"./is.js": 312,
-	"./it": 313,
-	"./it.js": 313,
-	"./ja": 314,
-	"./ja.js": 314,
-	"./jv": 315,
-	"./jv.js": 315,
-	"./ka": 316,
-	"./ka.js": 316,
-	"./kk": 317,
-	"./kk.js": 317,
-	"./km": 318,
-	"./km.js": 318,
-	"./kn": 319,
-	"./kn.js": 319,
-	"./ko": 320,
-	"./ko.js": 320,
-	"./ku": 321,
-	"./ku.js": 321,
-	"./ky": 322,
-	"./ky.js": 322,
-	"./lb": 323,
-	"./lb.js": 323,
-	"./lo": 324,
-	"./lo.js": 324,
-	"./lt": 325,
-	"./lt.js": 325,
-	"./lv": 326,
-	"./lv.js": 326,
-	"./me": 327,
-	"./me.js": 327,
-	"./mi": 328,
-	"./mi.js": 328,
-	"./mk": 329,
-	"./mk.js": 329,
-	"./ml": 330,
-	"./ml.js": 330,
-	"./mn": 331,
-	"./mn.js": 331,
-	"./mr": 332,
-	"./mr.js": 332,
-	"./ms": 333,
-	"./ms-my": 334,
-	"./ms-my.js": 334,
-	"./ms.js": 333,
-	"./mt": 335,
-	"./mt.js": 335,
-	"./my": 336,
-	"./my.js": 336,
-	"./nb": 337,
-	"./nb.js": 337,
-	"./ne": 338,
-	"./ne.js": 338,
-	"./nl": 339,
-	"./nl-be": 340,
-	"./nl-be.js": 340,
-	"./nl.js": 339,
-	"./nn": 341,
-	"./nn.js": 341,
-	"./pa-in": 342,
-	"./pa-in.js": 342,
-	"./pl": 343,
-	"./pl.js": 343,
-	"./pt": 344,
-	"./pt-br": 345,
-	"./pt-br.js": 345,
-	"./pt.js": 344,
-	"./ro": 346,
-	"./ro.js": 346,
-	"./ru": 347,
-	"./ru.js": 347,
-	"./sd": 348,
-	"./sd.js": 348,
-	"./se": 349,
-	"./se.js": 349,
-	"./si": 350,
-	"./si.js": 350,
-	"./sk": 351,
-	"./sk.js": 351,
-	"./sl": 352,
-	"./sl.js": 352,
-	"./sq": 353,
-	"./sq.js": 353,
-	"./sr": 354,
-	"./sr-cyrl": 355,
-	"./sr-cyrl.js": 355,
-	"./sr.js": 354,
-	"./ss": 356,
-	"./ss.js": 356,
-	"./sv": 357,
-	"./sv.js": 357,
-	"./sw": 358,
-	"./sw.js": 358,
-	"./ta": 359,
-	"./ta.js": 359,
-	"./te": 360,
-	"./te.js": 360,
-	"./tet": 361,
-	"./tet.js": 361,
-	"./tg": 362,
-	"./tg.js": 362,
-	"./th": 363,
-	"./th.js": 363,
-	"./tl-ph": 364,
-	"./tl-ph.js": 364,
-	"./tlh": 365,
-	"./tlh.js": 365,
-	"./tr": 366,
-	"./tr.js": 366,
-	"./tzl": 367,
-	"./tzl.js": 367,
-	"./tzm": 368,
-	"./tzm-latn": 369,
-	"./tzm-latn.js": 369,
-	"./tzm.js": 368,
-	"./ug-cn": 370,
-	"./ug-cn.js": 370,
-	"./uk": 371,
-	"./uk.js": 371,
-	"./ur": 372,
-	"./ur.js": 372,
-	"./uz": 373,
-	"./uz-latn": 374,
-	"./uz-latn.js": 374,
-	"./uz.js": 373,
-	"./vi": 375,
-	"./vi.js": 375,
-	"./x-pseudo": 376,
-	"./x-pseudo.js": 376,
-	"./yo": 377,
-	"./yo.js": 377,
-	"./zh-cn": 378,
-	"./zh-cn.js": 378,
-	"./zh-hk": 379,
-	"./zh-hk.js": 379,
-	"./zh-tw": 380,
-	"./zh-tw.js": 380
+	"./af": 256,
+	"./af.js": 256,
+	"./ar": 257,
+	"./ar-dz": 258,
+	"./ar-dz.js": 258,
+	"./ar-kw": 259,
+	"./ar-kw.js": 259,
+	"./ar-ly": 260,
+	"./ar-ly.js": 260,
+	"./ar-ma": 261,
+	"./ar-ma.js": 261,
+	"./ar-sa": 262,
+	"./ar-sa.js": 262,
+	"./ar-tn": 263,
+	"./ar-tn.js": 263,
+	"./ar.js": 257,
+	"./az": 264,
+	"./az.js": 264,
+	"./be": 265,
+	"./be.js": 265,
+	"./bg": 266,
+	"./bg.js": 266,
+	"./bm": 267,
+	"./bm.js": 267,
+	"./bn": 268,
+	"./bn.js": 268,
+	"./bo": 269,
+	"./bo.js": 269,
+	"./br": 270,
+	"./br.js": 270,
+	"./bs": 271,
+	"./bs.js": 271,
+	"./ca": 272,
+	"./ca.js": 272,
+	"./cs": 273,
+	"./cs.js": 273,
+	"./cv": 274,
+	"./cv.js": 274,
+	"./cy": 275,
+	"./cy.js": 275,
+	"./da": 276,
+	"./da.js": 276,
+	"./de": 277,
+	"./de-at": 278,
+	"./de-at.js": 278,
+	"./de-ch": 279,
+	"./de-ch.js": 279,
+	"./de.js": 277,
+	"./dv": 280,
+	"./dv.js": 280,
+	"./el": 281,
+	"./el.js": 281,
+	"./en-au": 282,
+	"./en-au.js": 282,
+	"./en-ca": 283,
+	"./en-ca.js": 283,
+	"./en-gb": 284,
+	"./en-gb.js": 284,
+	"./en-ie": 285,
+	"./en-ie.js": 285,
+	"./en-il": 286,
+	"./en-il.js": 286,
+	"./en-nz": 287,
+	"./en-nz.js": 287,
+	"./eo": 288,
+	"./eo.js": 288,
+	"./es": 289,
+	"./es-do": 290,
+	"./es-do.js": 290,
+	"./es-us": 291,
+	"./es-us.js": 291,
+	"./es.js": 289,
+	"./et": 292,
+	"./et.js": 292,
+	"./eu": 293,
+	"./eu.js": 293,
+	"./fa": 294,
+	"./fa.js": 294,
+	"./fi": 295,
+	"./fi.js": 295,
+	"./fo": 296,
+	"./fo.js": 296,
+	"./fr": 297,
+	"./fr-ca": 298,
+	"./fr-ca.js": 298,
+	"./fr-ch": 299,
+	"./fr-ch.js": 299,
+	"./fr.js": 297,
+	"./fy": 300,
+	"./fy.js": 300,
+	"./gd": 301,
+	"./gd.js": 301,
+	"./gl": 302,
+	"./gl.js": 302,
+	"./gom-latn": 303,
+	"./gom-latn.js": 303,
+	"./gu": 304,
+	"./gu.js": 304,
+	"./he": 305,
+	"./he.js": 305,
+	"./hi": 306,
+	"./hi.js": 306,
+	"./hr": 307,
+	"./hr.js": 307,
+	"./hu": 308,
+	"./hu.js": 308,
+	"./hy-am": 309,
+	"./hy-am.js": 309,
+	"./id": 310,
+	"./id.js": 310,
+	"./is": 311,
+	"./is.js": 311,
+	"./it": 312,
+	"./it.js": 312,
+	"./ja": 313,
+	"./ja.js": 313,
+	"./jv": 314,
+	"./jv.js": 314,
+	"./ka": 315,
+	"./ka.js": 315,
+	"./kk": 316,
+	"./kk.js": 316,
+	"./km": 317,
+	"./km.js": 317,
+	"./kn": 318,
+	"./kn.js": 318,
+	"./ko": 319,
+	"./ko.js": 319,
+	"./ku": 320,
+	"./ku.js": 320,
+	"./ky": 321,
+	"./ky.js": 321,
+	"./lb": 322,
+	"./lb.js": 322,
+	"./lo": 323,
+	"./lo.js": 323,
+	"./lt": 324,
+	"./lt.js": 324,
+	"./lv": 325,
+	"./lv.js": 325,
+	"./me": 326,
+	"./me.js": 326,
+	"./mi": 327,
+	"./mi.js": 327,
+	"./mk": 328,
+	"./mk.js": 328,
+	"./ml": 329,
+	"./ml.js": 329,
+	"./mn": 330,
+	"./mn.js": 330,
+	"./mr": 331,
+	"./mr.js": 331,
+	"./ms": 332,
+	"./ms-my": 333,
+	"./ms-my.js": 333,
+	"./ms.js": 332,
+	"./mt": 334,
+	"./mt.js": 334,
+	"./my": 335,
+	"./my.js": 335,
+	"./nb": 336,
+	"./nb.js": 336,
+	"./ne": 337,
+	"./ne.js": 337,
+	"./nl": 338,
+	"./nl-be": 339,
+	"./nl-be.js": 339,
+	"./nl.js": 338,
+	"./nn": 340,
+	"./nn.js": 340,
+	"./pa-in": 341,
+	"./pa-in.js": 341,
+	"./pl": 342,
+	"./pl.js": 342,
+	"./pt": 343,
+	"./pt-br": 344,
+	"./pt-br.js": 344,
+	"./pt.js": 343,
+	"./ro": 345,
+	"./ro.js": 345,
+	"./ru": 346,
+	"./ru.js": 346,
+	"./sd": 347,
+	"./sd.js": 347,
+	"./se": 348,
+	"./se.js": 348,
+	"./si": 349,
+	"./si.js": 349,
+	"./sk": 350,
+	"./sk.js": 350,
+	"./sl": 351,
+	"./sl.js": 351,
+	"./sq": 352,
+	"./sq.js": 352,
+	"./sr": 353,
+	"./sr-cyrl": 354,
+	"./sr-cyrl.js": 354,
+	"./sr.js": 353,
+	"./ss": 355,
+	"./ss.js": 355,
+	"./sv": 356,
+	"./sv.js": 356,
+	"./sw": 357,
+	"./sw.js": 357,
+	"./ta": 358,
+	"./ta.js": 358,
+	"./te": 359,
+	"./te.js": 359,
+	"./tet": 360,
+	"./tet.js": 360,
+	"./tg": 361,
+	"./tg.js": 361,
+	"./th": 362,
+	"./th.js": 362,
+	"./tl-ph": 363,
+	"./tl-ph.js": 363,
+	"./tlh": 364,
+	"./tlh.js": 364,
+	"./tr": 365,
+	"./tr.js": 365,
+	"./tzl": 366,
+	"./tzl.js": 366,
+	"./tzm": 367,
+	"./tzm-latn": 368,
+	"./tzm-latn.js": 368,
+	"./tzm.js": 367,
+	"./ug-cn": 369,
+	"./ug-cn.js": 369,
+	"./uk": 370,
+	"./uk.js": 370,
+	"./ur": 371,
+	"./ur.js": 371,
+	"./uz": 372,
+	"./uz-latn": 373,
+	"./uz-latn.js": 373,
+	"./uz.js": 372,
+	"./vi": 374,
+	"./vi.js": 374,
+	"./x-pseudo": 375,
+	"./x-pseudo.js": 375,
+	"./yo": 376,
+	"./yo.js": 376,
+	"./zh-cn": 377,
+	"./zh-cn.js": 377,
+	"./zh-hk": 378,
+	"./zh-hk.js": 378,
+	"./zh-tw": 379,
+	"./zh-tw.js": 379
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -1178,7 +1194,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"D:\Itec\disfrutaenviosIonic3\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"D:\Itec\disfrutaenviosIonic3\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"E:\Itec\disfrutaenviosIonic3\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"E:\Itec\disfrutaenviosIonic3\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -1373,19 +1389,18 @@ var EnviosService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_envios_service__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__estado_estado__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__estado_estado__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_sucursales_service__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_duracion_service__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_login_service__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__detalle_detalle__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__home_home__ = __webpack_require__(381);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__cadete_cadete__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__detalle_detalle__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__home_home__ = __webpack_require__(380);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__cadete_cadete__ = __webpack_require__(163);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__inicio_inicio__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_moment__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_Observable__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_storage__ = __webpack_require__(141);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1411,11 +1426,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 //importo moment
 
 
-
 var EnvioPage = /** @class */ (function () {
-    function EnvioPage(storage, duracionService, loginService, menu, loadingCtrl, navCtrl, enviosService, sucursalesService) {
+    function EnvioPage(navParams, duracionService, loginService, menu, loadingCtrl, navCtrl, enviosService, sucursalesService) {
         var _this = this;
-        this.storage = storage;
+        this.navParams = navParams;
         this.duracionService = duracionService;
         this.loginService = loginService;
         this.loadingCtrl = loadingCtrl;
@@ -1425,14 +1439,10 @@ var EnvioPage = /** @class */ (function () {
         this.envioss = []; //creo un arreglo vacio para llenarlo con el service de abajo en el constructor
         this.sucursales = [];
         this.current_user = { id: null, nombre: null, estado: null, sucursal: null, coneccion: null, fecha: null };
+        this.envio_tomado = { envio_id: null, cadete_id: null };
         this.duracion_sesion_y_medida = null;
         this.envioss = [];
         this.current_user = this.loginService.getSession();
-        var loader = this.loadingCtrl.create({
-            content: "Cargando Lista De Envíos...",
-            duration: 1000
-        });
-        loader.present();
         //cargo con el servicio el array de envios
         this.enviosService.getEnvios()
             .subscribe(function (envios) {
@@ -1443,13 +1453,14 @@ var EnvioPage = /** @class */ (function () {
             //siempe que hay cambios tengo que reinicializar las variables que use 
             //la mayor cantidad de problemas fue con el subscribe siempre ya que es asincrono
             //a la forma de ver estructurada del codigo
+            //voy llenando el array si concuerda con la sucursal
             for (var j = 0; j < envios.length; j++) {
                 if (envios[j]['sucursal'] == _this.current_user['sucursal']) {
                     _this.envioss.push(envios[j]);
                 }
             }
             _this.loginService.getUsuarios().subscribe(function (usuarios) {
-                for (var j = 0; j < _this.envioss.length; j++) {
+                var _loop_1 = function (j) {
                     //use otro campo fecha para dejar la original sin formato para calcular el tiempo con moment
                     _this.envioss[j]['fecha_moment'] = __WEBPACK_IMPORTED_MODULE_11_moment__(_this.envioss[j]['fecha']).format("DD MM YYYY");
                     for (var k = 0; k < usuarios.length; k++) {
@@ -1457,6 +1468,18 @@ var EnvioPage = /** @class */ (function () {
                             _this.envioss[j]['cliente'] = usuarios[k]['name'];
                         }
                     }
+                    _this.loginService.getEnviosTomados().subscribe(function (envios_tomados) {
+                        for (var p = 0; p < envios_tomados.length; p++) {
+                            console.log("envios_tomados envio id: ", envios_tomados[p]);
+                            console.log("envio j id: ", _this.envioss[j]['id']);
+                            if (envios_tomados[p]['envio_id'] == _this.envioss[j]['id']) {
+                                _this.envio_tomado = envios_tomados[p];
+                            }
+                        }
+                    });
+                };
+                for (var j = 0; j < _this.envioss.length; j++) {
+                    _loop_1(j);
                 }
             });
         });
@@ -1508,16 +1531,15 @@ var EnvioPage = /** @class */ (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])('MyNav'),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object)
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */])
     ], EnvioPage.prototype, "nav", void 0);
     EnvioPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-envio',template:/*ion-inline-start:"D:\Itec\disfrutaenviosIonic3\src\pages\envio\envio.html"*/'<ion-header>\n  <ion-navbar hideBackButton>\n        <button menuToggle side-rigth>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title class="centrado">\n          DisFruta Envíos\n        </ion-title>\n        \n        <ion-grid style="width: 97%; margin-bottom: 10px">\n\n        <ion-row>\n          <ion-col col-1></ion-col>\n          <ion-col col-3></ion-col>\n          <ion-col class="centrado" col-4>Cadete: {{current_user.nombre}} - {{current_user.coneccion}}</ion-col>\n          <ion-col col-4></ion-col>\n        </ion-row> \n        \n\n        \n\n        \n            <ion-row *ngIf="current_user.estado ==\'No Disponible\'" class="centrado" style="border-radius: 20px; background-color:rgba(252, 71, 71, 0.829);">\n                <ion-col col-1></ion-col>\n                <ion-col  col-10 >Estado: {{current_user.estado}}</ion-col>\n                <ion-col col-1></ion-col>\n            </ion-row>\n            <ion-row *ngIf="current_user.estado ==\'Disponible\'" class="centrado" style="border-radius: 20px; background-color:rgba(64, 216, 25, 0.829);">\n                <ion-col col-1></ion-col>\n                <ion-col col-10 >Estado: {{current_user.estado}}</ion-col>\n                <ion-col col-1></ion-col>\n            </ion-row>\n      </ion-grid>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="fondotodo">\n\n  \n  <ion-menu [content]="content">\n      <ion-toolbar>\n        <ion-title class="centrado">Opciones</ion-title>\n      </ion-toolbar>\n\n    <ion-content>\n      <ion-list>\n        <ion-label ion-button block (click)="verTodo()">\n          Google Maps Consultas\n        </ion-label>\n        <ion-label ion-button block (click)="verCadetes()">\n          Ver Cadetes\n        </ion-label>\n        <ion-label ion-button block (click)="salir()">\n          Salir\n        </ion-label>\n    \n      </ion-list>\n    </ion-content>\n  </ion-menu>\n\n  <ion-nav id="nav" #content [root]="rootPage" swipeBackEnabled="false"></ion-nav>\n  \n  \n\n\n        <ion-grid style="margin-top: 20px;">\n          <ion-row style="padding-top:15px; padding-bottom: 5px;font-weight: bold; border: 1px solid; background-color: rgb(205, 146, 8); color: white; margin-bottom:5px;">\n            <ion-col  style="border: 1px solid;" class="centrado" col-2>Cliente</ion-col>\n            <ion-col    style="border: 1px solid;" class="redondear" class="centrado" col-3>Dirección</ion-col>\n            <ion-col    style="border: 1px solid;" class="redondear" class="centrado" col-2>Estado</ion-col>\n            <ion-col    style="border: 1px solid;" class="redondear" class="centrado" col-1>Hace</ion-col>\n            <ion-col    style="border: 1px solid;" class="redondear" class="centrado" col-2>Fecha</ion-col>\n            <ion-col    style="border: 1px solid;" class="redondear" class="centrado" col-2>Accion</ion-col>\n          </ion-row>\n\n          <div *ngFor="let envio of envioss">\n\n            <ion-row style="background-color:rgb(137, 209, 250); border: 1px solid; border-radius: 20px;" *ngIf="envio.estado == \'En Camino\'"class="centrado">\n                  <ion-col  class="redondear" class="centrado" col-2>{{envio.cliente}}</ion-col>\n                  <ion-col  class="redondear" class="centrado" col-3>{{envio.destino}}</ion-col>\n                  <ion-col  class="redondear" class="centrado" col-2 >Cam.</ion-col>\n                  <ion-col  class="redondear" class="centrado" col-1>{{envio.hace}}</ion-col>\n                  <ion-col  class="redondear" class="centrado" col-2>{{envio.fecha_moment}}</ion-col>\n                  <ion-col  class="redondear" class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>\n                  <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>\n            </ion-row>\n\n            <ion-row style="background-color:rgb(241, 235, 150); border: 1px solid; border-radius: 20px;" *ngIf="envio.estado == \'Pendiente\'" class="centrado">\n              <ion-col  class="redondear" class="centrado" col-2>{{envio.cliente}}</ion-col>\n              <ion-col  class="redondear" class="centrado" col-3>{{envio.destino}}</ion-col>\n              <ion-col  class="redondear" class="centrado" col-2 >Pen.</ion-col>\n              <ion-col  class="redondear" class="centrado" col-1>{{envio.hace}}</ion-col>\n              <ion-col  class="redondear" class="centrado" col-2>{{envio.fecha_moment}}</ion-col>\n              <ion-col  class="redondear" class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>\n              <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>\n        </ion-row>\n\n        <ion-row style="background-color:rgb(130, 187, 38); border: 1px solid; border-radius: 20px;" *ngIf="envio.estado == \'Entregado\'" class="centrado">\n          <ion-col  class="redondear" class="centrado" col-2>{{envio.cliente}}</ion-col>\n          <ion-col  class="redondear" class="centrado" col-3>{{envio.destino}}</ion-col>\n          <ion-col  class="redondear" class="centrado" col-2 >Ent.</ion-col>\n          <ion-col  class="redondear" class="centrado" col-1>{{envio.hace}}</ion-col>\n          <ion-col  class="redondear" class="centrado" col-2>{{envio.fecha_moment}}</ion-col>\n          <ion-col class="redondear" class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>\n          <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>\n    </ion-row>\n\n    <ion-row style="background-color:rgba(240, 123, 123, 0.829); border: 1px solid; border-radius: 20px;" *ngIf="envio.estado == \'Cancelado\'" class="centrado">\n      <ion-col class="redondear" class="centrado" col-2>{{envio.cliente}}</ion-col>\n      <ion-col class="redondear" class="centrado" col-3>{{envio.destino}}</ion-col>\n      <ion-col class="redondear" class="centrado" col-2 >Can.</ion-col>\n      <ion-col class="redondear" class="centrado" col-1>{{envio.hace}}</ion-col>\n      <ion-col class="redondear" class="centrado" col-2>{{envio.fecha_moment}}</ion-col>\n      <ion-col class="redondear" class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>\n      <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>\n</ion-row>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n          </div>\n              \n\n\n\n\n\n                <!-- <ion-row  class="centrado" *ngFor="let envio of envioss" class="row" responsive-sm wrap  >\n                 \n                  <ion-col class="centrado" col-2>{{envio.cliente}}</ion-col>\n                  <ion-col class="centrado" col-3>{{envio.destino}}</ion-col>\n  \n                  <ion-col class="centrado" col-2 style="background-color:rgb(137, 209, 250);" *ngIf="envio.estado == \'En Camino\'" col>Cam.</ion-col>\n                  <ion-col class="centrado" col-2 style="background-color:rgb(241, 235, 150);" *ngIf="envio.estado == \'Pendiente\'" col>Pen.</ion-col>\n                  <ion-col class="centrado" col-2 style="background-color:rgb(130, 187, 38);" *ngIf="envio.estado == \'Entregado\'" col>Ent.</ion-col>\n                  <ion-col class="centrado" col-2 style="background-color:rgba(240, 123, 123, 0.829);" *ngIf="envio.estado == \'Cancelado\'" col>Can.</ion-col>\n                  <ion-col class="centrado" col-1>{{envio.hace}}</ion-col>\n                  <ion-col class="centrado" col-2>{{envio.fecha_moment}}</ion-col>\n                  <ion-col class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>\n                  <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>\n                \n            </ion-row> -->\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                <ion-row>\n                \n                  <ion-col>\n                    <button ion-button block (click)="nuevoEnvio()">Nuevo Envio</button>\n                    <button ion-button block (click)="verTodo()">Google Maps Consultas</button>\n                    <button ion-button block (click)="verCadetes()">Ver Cadetes</button>\n                    <button ion-button block (click)="salir()">Cerrar Sesión</button>\n                  </ion-col>\n                \n                </ion-row>\n\n          \n\n        </ion-grid>\n\n\n  \n\n</ion-content>\n'/*ion-inline-end:"D:\Itec\disfrutaenviosIonic3\src\pages\envio\envio.html"*/
+            selector: 'page-envio',template:/*ion-inline-start:"E:\Itec\disfrutaenviosIonic3\src\pages\envio\envio.html"*/'<ion-header>\n  <ion-navbar hideBackButton>\n        <button menuToggle side-rigth>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title class="centrado">\n          DisFruta Envíos\n        </ion-title>\n        \n        <ion-grid style="width: 97%; margin-bottom: 10px">\n\n        <ion-row>\n          <ion-col col-1></ion-col>\n          <ion-col col-3></ion-col>\n          <ion-col class="centrado" col-4>Cadete: {{current_user.nombre}} - {{current_user.coneccion}}</ion-col>\n          <ion-col col-4></ion-col>\n        </ion-row> \n        \n\n        \n\n        \n            <ion-row *ngIf="current_user.estado ==\'No Disponible\'" class="centrado" style="border-radius: 20px; background-color:rgba(252, 71, 71, 0.829);">\n                <ion-col col-1></ion-col>\n                <ion-col  col-10 >Estado: {{current_user.estado}}</ion-col>\n                <ion-col col-1></ion-col>\n            </ion-row>\n            <ion-row *ngIf="current_user.estado ==\'Disponible\'" class="centrado" style="border-radius: 20px; background-color:rgba(64, 216, 25, 0.829);">\n                <ion-col col-1></ion-col>\n                <ion-col col-10 >Estado: {{current_user.estado}}</ion-col>\n                <ion-col col-1></ion-col>\n            </ion-row>\n      </ion-grid>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="fondotodo">\n\n  \n  <ion-menu [content]="content">\n      <ion-toolbar>\n        <ion-title class="centrado">Opciones</ion-title>\n      </ion-toolbar>\n\n    <ion-content>\n      <ion-list>\n        <ion-label ion-button block (click)="verTodo()">\n          Google Maps Consultas\n        </ion-label>\n        <ion-label ion-button block (click)="verCadetes()">\n          Ver Cadetes\n        </ion-label>\n        <ion-label ion-button block (click)="salir()">\n          Salir\n        </ion-label>\n    \n      </ion-list>\n    </ion-content>\n  </ion-menu>\n\n  <ion-nav id="nav" #content [root]="rootPage" swipeBackEnabled="false"></ion-nav>\n  \n  \n\n\n        <ion-grid style="margin-top: 20px;">\n          <ion-row style="padding-top:15px; padding-bottom: 5px;font-weight: bold; border: 1px solid; background-color: rgb(205, 146, 8); color: white; margin-bottom:5px;">\n            <ion-col  style="border: 1px solid;" class="centrado" col-2>Cliente</ion-col>\n            <ion-col    style="border: 1px solid;" class="redondear" class="centrado" col-3>Dirección</ion-col>\n            <ion-col    style="border: 1px solid;" class="redondear" class="centrado" col-2>Estado</ion-col>\n            <ion-col    style="border: 1px solid;" class="redondear" class="centrado" col-1>Hace</ion-col>\n            <ion-col    style="border: 1px solid;" class="redondear" class="centrado" col-2>Fecha</ion-col>\n            <ion-col    style="border: 1px solid;" class="redondear" class="centrado" col-2>Accion</ion-col>\n          </ion-row>\n\n          <div *ngFor="let envio of envioss">\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n            <ion-row style="background-color:rgb(137, 209, 250); border: 2px solid palevioletred; border-radius: 20px; margin-left: 10px;" *ngIf="envio.estado == \'En Camino\' && envio_tomado.envio_id == envio.id && envio_tomado.cadete_id == current_user.id" class="centrado">\n              <ion-col  class="redondear" class="centrado" col-2>{{envio.cliente}}</ion-col>\n              <ion-col  class="redondear" class="centrado" col-3>{{envio.destino}}</ion-col>\n              <ion-col  class="redondear" class="centrado" col-2 >Cam.</ion-col>\n              <ion-col  class="redondear" class="centrado" col-1>{{envio.hace}}</ion-col>\n              <ion-col  class="redondear" class="centrado" col-2>{{envio.fecha_moment}}</ion-col>\n              <ion-col  class="redondear" class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>\n              <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>\n            </ion-row>\n            <ion-row style="background-color:rgb(137, 209, 250); border: 1px solid; border-radius: 20px;" *ngIf="envio.estado == \'En Camino\' && envio_tomado.cadete_id != current_user.id " class="centrado">\n              <ion-col  class="redondear" class="centrado" col-2>{{envio.cliente}}</ion-col>\n              <ion-col  class="redondear" class="centrado" col-3>{{envio.destino}}</ion-col>\n              <ion-col  class="redondear" class="centrado" col-2 >Cam.</ion-col>\n              <ion-col  class="redondear" class="centrado" col-1>{{envio.hace}}</ion-col>\n              <ion-col  class="redondear" class="centrado" col-2>{{envio.fecha_moment}}</ion-col>\n              <ion-col  class="redondear" class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>\n              <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>\n            </ion-row>\n\n\n\n\n            <ion-row style="background-color:rgb(241, 235, 150); border: 1px solid; border-radius: 20px;" *ngIf="envio.estado == \'Pendiente\'" class="centrado">\n              <ion-col  class="redondear" class="centrado" col-2>{{envio.cliente}}</ion-col>\n              <ion-col  class="redondear" class="centrado" col-3>{{envio.destino}}</ion-col>\n              <ion-col  class="redondear" class="centrado" col-2 >Pen.</ion-col>\n              <ion-col  class="redondear" class="centrado" col-1>{{envio.hace}}</ion-col>\n              <ion-col  class="redondear" class="centrado" col-2>{{envio.fecha_moment}}</ion-col>\n              <ion-col  class="redondear" class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>\n              <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>\n            </ion-row>\n\n            <ion-row style="background-color:rgb(130, 187, 38); border: 1px solid; border-radius: 20px;" *ngIf="envio.estado == \'Entregado\'" class="centrado">\n              <ion-col  class="redondear" class="centrado" col-2>{{envio.cliente}}</ion-col>\n              <ion-col  class="redondear" class="centrado" col-3>{{envio.destino}}</ion-col>\n              <ion-col  class="redondear" class="centrado" col-2 >Ent.</ion-col>\n              <ion-col  class="redondear" class="centrado" col-1>{{envio.hace}}</ion-col>\n              <ion-col  class="redondear" class="centrado" col-2>{{envio.fecha_moment}}</ion-col>\n              <ion-col class="redondear" class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>\n              <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>\n            </ion-row>\n\n            <ion-row style="background-color:rgba(240, 123, 123, 0.829); border: 1px solid; border-radius: 20px;" *ngIf="envio.estado == \'Cancelado\'" class="centrado">\n              <ion-col class="redondear" class="centrado" col-2>{{envio.cliente}}</ion-col>\n              <ion-col class="redondear" class="centrado" col-3>{{envio.destino}}</ion-col>\n              <ion-col class="redondear" class="centrado" col-2 >Can.</ion-col>\n              <ion-col class="redondear" class="centrado" col-1>{{envio.hace}}</ion-col>\n              <ion-col class="redondear" class="centrado" col-2>{{envio.fecha_moment}}</ion-col>\n              <ion-col class="redondear" class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>\n              <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>\n            </ion-row>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n          </div>\n              \n\n\n\n\n\n                <!-- <ion-row  class="centrado" *ngFor="let envio of envioss" class="row" responsive-sm wrap  >\n                 \n                  <ion-col class="centrado" col-2>{{envio.cliente}}</ion-col>\n                  <ion-col class="centrado" col-3>{{envio.destino}}</ion-col>\n  \n                  <ion-col class="centrado" col-2 style="background-color:rgb(137, 209, 250);" *ngIf="envio.estado == \'En Camino\'" col>Cam.</ion-col>\n                  <ion-col class="centrado" col-2 style="background-color:rgb(241, 235, 150);" *ngIf="envio.estado == \'Pendiente\'" col>Pen.</ion-col>\n                  <ion-col class="centrado" col-2 style="background-color:rgb(130, 187, 38);" *ngIf="envio.estado == \'Entregado\'" col>Ent.</ion-col>\n                  <ion-col class="centrado" col-2 style="background-color:rgba(240, 123, 123, 0.829);" *ngIf="envio.estado == \'Cancelado\'" col>Can.</ion-col>\n                  <ion-col class="centrado" col-1>{{envio.hace}}</ion-col>\n                  <ion-col class="centrado" col-2>{{envio.fecha_moment}}</ion-col>\n                  <ion-col class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>\n                  <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>\n                \n            </ion-row> -->\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                <ion-row>\n                \n                  <ion-col>\n                    <button ion-button block (click)="nuevoEnvio()">Nuevo Envio</button>\n                    <button ion-button block (click)="verTodo()">Google Maps Consultas</button>\n                    <button ion-button block (click)="verCadetes()">Ver Cadetes</button>\n                    <button ion-button block (click)="salir()">Cerrar Sesión</button>\n                  </ion-col>\n                \n                </ion-row>\n\n          \n\n        </ion-grid>\n\n\n  \n\n</ion-content>\n'/*ion-inline-end:"E:\Itec\disfrutaenviosIonic3\src\pages\envio\envio.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_13__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_13__ionic_storage__["b" /* Storage */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__services_duracion_service__["a" /* DuracionService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_duracion_service__["a" /* DuracionService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_6__services_login_service__["a" /* LoginService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_login_service__["a" /* LoginService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_2__services_envios_service__["a" /* EnviosService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_envios_service__["a" /* EnviosService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_4__services_sucursales_service__["a" /* SucursalesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_sucursales_service__["a" /* SucursalesService */]) === "function" && _j || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_5__services_duracion_service__["a" /* DuracionService */], __WEBPACK_IMPORTED_MODULE_6__services_login_service__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_envios_service__["a" /* EnviosService */], __WEBPACK_IMPORTED_MODULE_4__services_sucursales_service__["a" /* SucursalesService */]])
     ], EnvioPage);
     return EnvioPage;
-    var _a, _b, _c, _d, _e, _f, _g, _h, _j;
 }());
 
 //# sourceMappingURL=envio.js.map
@@ -1532,10 +1554,10 @@ var EnvioPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__envio_envio__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__registro_registro__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__registro_registro__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_sucursales_service__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_login_service__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(382);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_moment__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1651,7 +1673,7 @@ var InicioPage = /** @class */ (function () {
     ], InicioPage.prototype, "nav", void 0);
     InicioPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-inicio',template:/*ion-inline-start:"D:\Itec\disfrutaenviosIonic3\src\pages\inicio\inicio.html"*/'<!--\n  Generated template for the InicioPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n\n</ion-header>\n\n<ion-content padding class="fondotodo">\n\n<div padding class="fondo">\n\n\n\n<ion-grid>\n  <ion-row>\n\n      <ion-col>\n\n        </ion-col>\n\n    <ion-col no-padding col-10 col-lg-6>\n      <ion-item class="logo">\n\n      </ion-item>\n    </ion-col>\n\n    <ion-col>\n\n      </ion-col>\n\n  </ion-row>\n  \n\n  <ion-row>\n    <ion-col>\n\n    </ion-col>\n\n    <ion-col no-padding col-10 col-lg-6>\n          <ion-item class="botonescss">\n            <ion-input  placeholder="Escriba su email" class="inputcss" type="text" [(ngModel)] = "email"></ion-input>\n          </ion-item>\n    </ion-col>\n\n    <ion-col>\n      \n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n      <ion-col>\n  \n      </ion-col>\n  \n      <ion-col no-padding col-10 col-lg-6>\n          <ion-item>>\n              <ion-input placeholder="Escriba su contraseña" class="inputcss" type="password" [(ngModel)] = "password"> </ion-input>\n          </ion-item>\n      </ion-col>\n  \n      <ion-col>\n        \n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n        <ion-col>\n    \n        </ion-col>\n    \n        <ion-col  no-padding col-10 col-lg-6>\n            <ion-item>\n                <ion-select [(ngModel)]="sucursal_id" class="selectcss" placeholder="Seleccione una sucursal">\n                  <ion-option *ngFor="let sucursal of sucursales" value="{{sucursal.id}}">{{sucursal.name}}</ion-option>\n                </ion-select>\n              </ion-item>\n        </ion-col>\n    \n        <ion-col>\n          \n        </ion-col>\n      </ion-row>\n\n      <ion-row>\n        <ion-col>\n\n        </ion-col>\n        <ion-col no-padding col-10 col-lg-6>\n            <ion-item >  \n                <button padding ion-button block (click)="entrar()">Entrar</button>\n              </ion-item> \n          </ion-col>\n          <ion-col>\n          \n            </ion-col>\n      </ion-row>\n\n      <ion-row>\n          <ion-col>\n  \n          </ion-col>\n          <ion-col no-padding col-10 col-lg-6>\n              <ion-item>    \n                  <i class="botonescss" (click)="registrar()">¿No tenés una cuenta? Registrate</i>\n                </ion-item> \n            </ion-col>\n            <ion-col>\n            \n              </ion-col>\n        </ion-row>\n      \n\n      \n\n      \n\n     \n\n      \n\n\n</ion-grid>\n\n\n\n    </div>\n\n</ion-content>\n'/*ion-inline-end:"D:\Itec\disfrutaenviosIonic3\src\pages\inicio\inicio.html"*/
+            selector: 'page-inicio',template:/*ion-inline-start:"E:\Itec\disfrutaenviosIonic3\src\pages\inicio\inicio.html"*/'<!--\n  Generated template for the InicioPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n\n</ion-header>\n\n<ion-content padding class="fondotodo">\n\n<div padding class="fondo">\n\n\n\n<ion-grid>\n  <ion-row>\n\n      <ion-col>\n\n        </ion-col>\n\n    <ion-col no-padding col-10 col-lg-6>\n      <ion-item class="logo">\n\n      </ion-item>\n    </ion-col>\n\n    <ion-col>\n\n      </ion-col>\n\n  </ion-row>\n  \n\n  <ion-row>\n    <ion-col>\n\n    </ion-col>\n\n    <ion-col no-padding col-10 col-lg-6>\n          <ion-item class="botonescss">\n            <ion-input  placeholder="Escriba su email" class="inputcss" type="text" [(ngModel)] = "email"></ion-input>\n          </ion-item>\n    </ion-col>\n\n    <ion-col>\n      \n    </ion-col>\n  </ion-row>\n\n  <ion-row>\n      <ion-col>\n  \n      </ion-col>\n  \n      <ion-col no-padding col-10 col-lg-6>\n          <ion-item>>\n              <ion-input placeholder="Escriba su contraseña" class="inputcss" type="password" [(ngModel)] = "password"> </ion-input>\n          </ion-item>\n      </ion-col>\n  \n      <ion-col>\n        \n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n        <ion-col>\n    \n        </ion-col>\n    \n        <ion-col  no-padding col-10 col-lg-6>\n            <ion-item>\n                <ion-select [(ngModel)]="sucursal_id" class="selectcss" placeholder="Seleccione una sucursal">\n                  <ion-option *ngFor="let sucursal of sucursales" value="{{sucursal.id}}">{{sucursal.name}}</ion-option>\n                </ion-select>\n              </ion-item>\n        </ion-col>\n    \n        <ion-col>\n          \n        </ion-col>\n      </ion-row>\n\n      <ion-row>\n        <ion-col>\n\n        </ion-col>\n        <ion-col no-padding col-10 col-lg-6>\n            <ion-item >  \n                <button padding ion-button block (click)="entrar()">Entrar</button>\n              </ion-item> \n          </ion-col>\n          <ion-col>\n          \n            </ion-col>\n      </ion-row>\n\n      <ion-row>\n          <ion-col>\n  \n          </ion-col>\n          <ion-col no-padding col-10 col-lg-6>\n              <ion-item>    \n                  <i class="botonescss" (click)="registrar()">¿No tenés una cuenta? Registrate</i>\n                </ion-item> \n            </ion-col>\n            <ion-col>\n            \n              </ion-col>\n        </ion-row>\n      \n\n      \n\n      \n\n     \n\n      \n\n\n</ion-grid>\n\n\n\n    </div>\n\n</ion-content>\n'/*ion-inline-end:"E:\Itec\disfrutaenviosIonic3\src\pages\inicio\inicio.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_5__services_login_service__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_4__services_sucursales_service__["a" /* SucursalesService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */]])
     ], InicioPage);

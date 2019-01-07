@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core'; //agregue viewchild
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import {EnviosService} from '../../services/envios.service'; //agrego el servicio que cree
 import {EstadoPage} from '../estado/estado';
 import {SucursalesService} from '../../services/sucursales.service';
@@ -18,7 +18,6 @@ import { MenuController } from 'ionic-angular';
 import * as moment from 'moment';
 
 import {Observable} from 'rxjs/Observable';
-import { Storage } from '@ionic/storage';
 
 
 
@@ -37,15 +36,18 @@ export class EnvioPage {
   sucursales = [];
 
   current_user:any = {id:null, nombre: null, estado: null, sucursal: null,coneccion: null, fecha: null};
-  
+  envio_tomado:any = {envio_id:null, cadete_id: null};
+
   
   duracion_sesion_y_medida=null;
 
   @ViewChild('MyNav') nav: NavController
   
-  constructor(private storage: Storage, public duracionService: DuracionService, public loginService : LoginService, menu: MenuController, public loadingCtrl: LoadingController, public navCtrl: NavController, public enviosService : EnviosService, public sucursalesService : SucursalesService) {
+  constructor(public navParams: NavParams, public duracionService: DuracionService, public loginService : LoginService, menu: MenuController, public loadingCtrl: LoadingController, public navCtrl: NavController, public enviosService : EnviosService, public sucursalesService : SucursalesService) {
     this.envioss = [];
    this.current_user=this.loginService.getSession();
+
+   
 
    
    
@@ -58,12 +60,7 @@ export class EnvioPage {
 
     
 
-    const loader = this.loadingCtrl.create({
-        content: "Cargando Lista De Envíos...",
-        duration: 1000
-      });
     
-    loader.present();
 
      
     //cargo con el servicio el array de envios
@@ -76,12 +73,20 @@ export class EnvioPage {
         //siempe que hay cambios tengo que reinicializar las variables que use 
         //la mayor cantidad de problemas fue con el subscribe siempre ya que es asincrono
         //a la forma de ver estructurada del codigo
+
+
+        //voy llenando el array si concuerda con la sucursal
         for(let j=0; j < envios.length; j++){
               if(envios[j]['sucursal']==this.current_user['sucursal']){
 
               this.envioss.push(envios[j]);
               
               }
+              
+              
+
+                
+              
         }
             
 
@@ -97,8 +102,29 @@ export class EnvioPage {
                             this.envioss[j]['cliente']=usuarios[k]['name'];
                     }
               }
+
+              this.loginService.getEnviosTomados().subscribe(envios_tomados =>{
+
+                
+                for(let p=0; p < envios_tomados.length; p++){
+
+                      console.log("envios_tomados envio id: ", envios_tomados[p]);
+                      console.log("envio j id: ",  this.envioss[j]['id']);
+                       if(envios_tomados[p]['envio_id'] == this.envioss[j]['id']){
+    
+                              this.envio_tomado=envios_tomados[p];
+    
+                       }
+                }   
+    
+    
+            });
+              
             
           }   
+
+  
+       
 
 
      }); 

@@ -115,8 +115,9 @@ export class EstadoPage {
     let estado="Cancelado";
     this.enviosService.setEstado(this.envioDetalle['id'], estado, this.cadete['id']);
     this.usuariosService.setDisponible(this.cadete['id']);
+    this.loginService.delEnvioTomado(this.envioDetalle['id']);
     alert("¡Cancelado!");
-    this.navCtrl.push(EnvioPage);
+    this.navCtrl.push(EnvioPage, {id_tomado: 0});
   }
 
   public entregarEnvio(){
@@ -129,8 +130,9 @@ export class EstadoPage {
       let estado="Entregado";
       this.enviosService.setEstado(this.envioDetalle['id'], estado, this.cadete['id']);
       this.usuariosService.setDisponible(this.cadete['id']);
+      this.loginService.delEnvioTomado(this.envioDetalle['id']);
       alert("Entregado con exito");
-      this.navCtrl.push(EnvioPage);
+      this.navCtrl.push(EnvioPage, {id_tomado: 0});
      //}
   }
 
@@ -144,8 +146,11 @@ export class EstadoPage {
       let estado="En Camino";
       this.usuariosService.setNoDisponible(this.cadete['id']);
       this.enviosService.setEstado(this.envioDetalle['id'], estado, this.cadete['id']);
+      this.loginService.setIdEnvio(this.envioDetalle['id'], this.cadete['id']);
+      console.log("seteado: "+this.envioDetalle['id']);
       alert("Tomaste el envio");
-      this.navCtrl.push(EnvioPage);
+    //this.navCtrl.push(EnvioPage, {id_tomado: this.envioDetalle['id']});
+    this.navCtrl.pop();
      }
     // //actualizar estado envio a "en camino"
     // 

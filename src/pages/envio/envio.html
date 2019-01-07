@@ -75,15 +75,57 @@
 
           <div *ngFor="let envio of envioss">
 
-            <ion-row style="background-color:rgb(137, 209, 250); border: 1px solid; border-radius: 20px;" *ngIf="envio.estado == 'En Camino'"class="centrado">
-                  <ion-col  class="redondear" class="centrado" col-2>{{envio.cliente}}</ion-col>
-                  <ion-col  class="redondear" class="centrado" col-3>{{envio.destino}}</ion-col>
-                  <ion-col  class="redondear" class="centrado" col-2 >Cam.</ion-col>
-                  <ion-col  class="redondear" class="centrado" col-1>{{envio.hace}}</ion-col>
-                  <ion-col  class="redondear" class="centrado" col-2>{{envio.fecha_moment}}</ion-col>
-                  <ion-col  class="redondear" class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>
-                  <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <ion-row style="background-color:rgb(137, 209, 250); border: 2px solid palevioletred; border-radius: 20px; margin-left: 10px;" *ngIf="envio.estado == 'En Camino' && envio_tomado.envio_id == envio.id && envio_tomado.cadete_id == current_user.id" class="centrado">
+              <ion-col  class="redondear" class="centrado" col-2>{{envio.cliente}}</ion-col>
+              <ion-col  class="redondear" class="centrado" col-3>{{envio.destino}}</ion-col>
+              <ion-col  class="redondear" class="centrado" col-2 >Cam.</ion-col>
+              <ion-col  class="redondear" class="centrado" col-1>{{envio.hace}}</ion-col>
+              <ion-col  class="redondear" class="centrado" col-2>{{envio.fecha_moment}}</ion-col>
+              <ion-col  class="redondear" class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>
+              <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>
             </ion-row>
+            <ion-row style="background-color:rgb(137, 209, 250); border: 1px solid; border-radius: 20px;" *ngIf="envio.estado == 'En Camino' && envio_tomado.cadete_id != current_user.id " class="centrado">
+              <ion-col  class="redondear" class="centrado" col-2>{{envio.cliente}}</ion-col>
+              <ion-col  class="redondear" class="centrado" col-3>{{envio.destino}}</ion-col>
+              <ion-col  class="redondear" class="centrado" col-2 >Cam.</ion-col>
+              <ion-col  class="redondear" class="centrado" col-1>{{envio.hace}}</ion-col>
+              <ion-col  class="redondear" class="centrado" col-2>{{envio.fecha_moment}}</ion-col>
+              <ion-col  class="redondear" class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>
+              <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>
+            </ion-row>
+
+
+
 
             <ion-row style="background-color:rgb(241, 235, 150); border: 1px solid; border-radius: 20px;" *ngIf="envio.estado == 'Pendiente'" class="centrado">
               <ion-col  class="redondear" class="centrado" col-2>{{envio.cliente}}</ion-col>
@@ -93,27 +135,46 @@
               <ion-col  class="redondear" class="centrado" col-2>{{envio.fecha_moment}}</ion-col>
               <ion-col  class="redondear" class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>
               <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>
-        </ion-row>
+            </ion-row>
 
-        <ion-row style="background-color:rgb(130, 187, 38); border: 1px solid; border-radius: 20px;" *ngIf="envio.estado == 'Entregado'" class="centrado">
-          <ion-col  class="redondear" class="centrado" col-2>{{envio.cliente}}</ion-col>
-          <ion-col  class="redondear" class="centrado" col-3>{{envio.destino}}</ion-col>
-          <ion-col  class="redondear" class="centrado" col-2 >Ent.</ion-col>
-          <ion-col  class="redondear" class="centrado" col-1>{{envio.hace}}</ion-col>
-          <ion-col  class="redondear" class="centrado" col-2>{{envio.fecha_moment}}</ion-col>
-          <ion-col class="redondear" class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>
-          <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>
-    </ion-row>
+            <ion-row style="background-color:rgb(130, 187, 38); border: 1px solid; border-radius: 20px;" *ngIf="envio.estado == 'Entregado'" class="centrado">
+              <ion-col  class="redondear" class="centrado" col-2>{{envio.cliente}}</ion-col>
+              <ion-col  class="redondear" class="centrado" col-3>{{envio.destino}}</ion-col>
+              <ion-col  class="redondear" class="centrado" col-2 >Ent.</ion-col>
+              <ion-col  class="redondear" class="centrado" col-1>{{envio.hace}}</ion-col>
+              <ion-col  class="redondear" class="centrado" col-2>{{envio.fecha_moment}}</ion-col>
+              <ion-col class="redondear" class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>
+              <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>
+            </ion-row>
 
-    <ion-row style="background-color:rgba(240, 123, 123, 0.829); border: 1px solid; border-radius: 20px;" *ngIf="envio.estado == 'Cancelado'" class="centrado">
-      <ion-col class="redondear" class="centrado" col-2>{{envio.cliente}}</ion-col>
-      <ion-col class="redondear" class="centrado" col-3>{{envio.destino}}</ion-col>
-      <ion-col class="redondear" class="centrado" col-2 >Can.</ion-col>
-      <ion-col class="redondear" class="centrado" col-1>{{envio.hace}}</ion-col>
-      <ion-col class="redondear" class="centrado" col-2>{{envio.fecha_moment}}</ion-col>
-      <ion-col class="redondear" class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>
-      <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>
-</ion-row>
+            <ion-row style="background-color:rgba(240, 123, 123, 0.829); border: 1px solid; border-radius: 20px;" *ngIf="envio.estado == 'Cancelado'" class="centrado">
+              <ion-col class="redondear" class="centrado" col-2>{{envio.cliente}}</ion-col>
+              <ion-col class="redondear" class="centrado" col-3>{{envio.destino}}</ion-col>
+              <ion-col class="redondear" class="centrado" col-2 >Can.</ion-col>
+              <ion-col class="redondear" class="centrado" col-1>{{envio.hace}}</ion-col>
+              <ion-col class="redondear" class="centrado" col-2>{{envio.fecha_moment}}</ion-col>
+              <ion-col class="redondear" class="centrado" col-2><button (click) = "verDetalle(envio.id)" ><ion-icon name="search"></ion-icon></button>
+              <button (click) = "editarDetalle(envio.id)" ><ion-icon name="build"></ion-icon></button></ion-col>
+            </ion-row>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
